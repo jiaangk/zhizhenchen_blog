@@ -18,7 +18,11 @@
   <meta name="MobileOptimized" content="320" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light">
-  <meta name="description" content="RSA Generation  取两个大质数 $p$ 和 $q$ ，为了安全性 $p$ 和 $q$ 长度应 大于 $2048$ 位； 设 $n = pq$； 设 $m = \phi(n) = (p-1)(q-1)$； 取 $e$，使得 $2 &lt; e &lt; m$且 $gcd(e, m) = 1$； 取 $d$，使得 $d \times e \equiv 1 \ (mod\ m)$； 此时，公钥为 $(n, e)$，私钥为 $(n, d)$。  " />
+  <meta name="description" content="RSA Generation  取两个大质数 $p$ 和 $q$ ，为了安全性 $p$ 和 $q$ 长度应 大于 $2048$ 位； 设 $n = pq$； 设 $m = \phi(n) = (p-1)(q-1)$； 取 $e$，使得 $2 &lt; e &lt; m$且 $gcd(e, m) = 1$； 取 $d$，使得 $d \times e \equiv 1 \ (mod\ m)$； 此时，公钥为 $(n, e)$，私钥为 $(n, d)$。  Encryption 约定 $x$ 为 plaintext， $y$ 为 cyphertext。
+$$ y = x^e \ mod \ n $$
+Decryption $$ x = y^d\ mod \ n $$
+Proof 当 $x$ 与 $n$ 互质时，有
+$$ x = y^d \ mod \ n \ x = x^{ed} \ mod \ n $$" />
   <meta name="author" content="Jiaangk">
   <meta name="keywords" content="Cryptography, Number Theory, Algorithm">
   <title>计时攻击基础：RSA算法及其实现 | Jiaangk&#39;s Blog</title>
@@ -27,7 +31,11 @@
 
   
   <meta property="og:type" content="article" />
-  <meta property="og:description" content="RSA Generation  取两个大质数 $p$ 和 $q$ ，为了安全性 $p$ 和 $q$ 长度应 大于 $2048$ 位； 设 $n = pq$； 设 $m = \phi(n) = (p-1)(q-1)$； 取 $e$，使得 $2 &lt; e &lt; m$且 $gcd(e, m) = 1$； 取 $d$，使得 $d \times e \equiv 1 \ (mod\ m)$； 此时，公钥为 $(n, e)$，私钥为 $(n, d)$。  " />
+  <meta property="og:description" content="RSA Generation  取两个大质数 $p$ 和 $q$ ，为了安全性 $p$ 和 $q$ 长度应 大于 $2048$ 位； 设 $n = pq$； 设 $m = \phi(n) = (p-1)(q-1)$； 取 $e$，使得 $2 &lt; e &lt; m$且 $gcd(e, m) = 1$； 取 $d$，使得 $d \times e \equiv 1 \ (mod\ m)$； 此时，公钥为 $(n, e)$，私钥为 $(n, d)$。  Encryption 约定 $x$ 为 plaintext， $y$ 为 cyphertext。
+$$ y = x^e \ mod \ n $$
+Decryption $$ x = y^d\ mod \ n $$
+Proof 当 $x$ 与 $n$ 互质时，有
+$$ x = y^d \ mod \ n \ x = x^{ed} \ mod \ n $$" />
   <meta property="og:title" content="计时攻击基础：RSA算法及其实现" />
   <meta property="og:site_name" content="Jiaangk&#39;s Blog" />
   <meta property="og:image:type" content="image/jpeg" />
@@ -49,7 +57,11 @@
   
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="计时攻击基础：RSA算法及其实现 | Jiaangk&#39;s Blog" />
-  <meta name="twitter:description" content="RSA Generation  取两个大质数 $p$ 和 $q$ ，为了安全性 $p$ 和 $q$ 长度应 大于 $2048$ 位； 设 $n = pq$； 设 $m = \phi(n) = (p-1)(q-1)$； 取 $e$，使得 $2 &lt; e &lt; m$且 $gcd(e, m) = 1$； 取 $d$，使得 $d \times e \equiv 1 \ (mod\ m)$； 此时，公钥为 $(n, e)$，私钥为 $(n, d)$。  " />
+  <meta name="twitter:description" content="RSA Generation  取两个大质数 $p$ 和 $q$ ，为了安全性 $p$ 和 $q$ 长度应 大于 $2048$ 位； 设 $n = pq$； 设 $m = \phi(n) = (p-1)(q-1)$； 取 $e$，使得 $2 &lt; e &lt; m$且 $gcd(e, m) = 1$； 取 $d$，使得 $d \times e \equiv 1 \ (mod\ m)$； 此时，公钥为 $(n, e)$，私钥为 $(n, d)$。  Encryption 约定 $x$ 为 plaintext， $y$ 为 cyphertext。
+$$ y = x^e \ mod \ n $$
+Decryption $$ x = y^d\ mod \ n $$
+Proof 当 $x$ 与 $n$ 互质时，有
+$$ x = y^d \ mod \ n \ x = x^{ed} \ mod \ n $$" />
   <meta name="twitter:domain" content="https://jiaangk.github.io/posts/rsa-crt/" />
 
   
@@ -248,7 +260,7 @@
 
 
 <svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path d='M256 48C141.13 48 48 141.13 48 256c0 114.69 93.32 208 208 208 114.86 0 208-93.14 208-208 0-114.69-93.31-208-208-208zm108 240H244a4 4 0 01-4-4V116a4 4 0 014-4h24a4 4 0 014 4v140h92a4 4 0 014 4v24a4 4 0 01-4 4z'/></svg>
-a min to read</span>
+2 mins to read</span>
         
           <span>
 
@@ -287,6 +299,52 @@ Jiaangk</span>
 <li>取 $d$，使得 $d \times e \equiv 1 \ (mod\ m)$；</li>
 <li>此时，公钥为 $(n, e)$，私钥为 $(n, d)$。</li>
 </ol>
+<h3 id="encryption">Encryption<a hidden class="heading-anchor" aria-hidden="true" href="#encryption">#</a></h3>
+<p>约定 $x$ 为 plaintext， $y$ 为 cyphertext。</p>
+<p>$$
+y = x^e \ mod \ n
+$$</p>
+<h3 id="decryption">Decryption<a hidden class="heading-anchor" aria-hidden="true" href="#decryption">#</a></h3>
+<p>$$
+x = y^d\ mod \ n
+$$</p>
+<h3 id="proof">Proof<a hidden class="heading-anchor" aria-hidden="true" href="#proof">#</a></h3>
+<p>当 $x$ 与 $n$ 互质时，有</p>
+<p>$$
+x = y^d \ mod \ n \ x = x^{ed} \ mod \ n
+$$</p>
+<p>设 $k$ 为一自然数，则由同余的定义，有</p>
+<p>$$
+x = x^{km + 1} \ mod \ n \ = x \times (x^{\phi(n)})^k \ mod \ n
+$$</p>
+<p>由欧拉定理，得</p>
+<p>$$
+x = x \ mod \ n = x
+$$</p>
+<p>当 $x$ 与 $n$ 不互质时，不妨设 $x$ 为 $p$ 的倍数，记为 $x = ap$，其中 $a$ 是一正整数。</p>
+<p>$$
+x^{\phi(q)} \equiv 1 \ (mod \ q) \ x^{k\phi(p)\phi(q)} \equiv 1 \ (mod \ q) \ x^{k\phi(p)\phi(q)} = 1 + bq
+$$</p>
+<p>则</p>
+<p>$$
+x = x^{km+1} \ mod \ n \ = x \times (1 + bq) \ mod \ n \ = (x + bqx) \ mod \ n \ = x \ mod\  n \ = x
+$$</p>
+<h3 id="security">Security<a hidden class="heading-anchor" aria-hidden="true" href="#security">#</a></h3>
+<p>若想通过公钥推知私钥，则必须对密钥 $n$ 进行分解质因数，由于这是一个数论难题，因此只需要将 $n$ 设置的足够大，则可以确保安全性。</p>
+<h2 id="rsa-crt">RSA-CRT<a hidden class="heading-anchor" aria-hidden="true" href="#rsa-crt">#</a></h2>
+<p>由于接收者同时知道 $q$ 和 $p$ ，故由中国剩余定理(CRT)，将 $mod \ n$的操作拆分，可实现加速。</p>
+<h3 id="decryption-1">Decryption<a hidden class="heading-anchor" aria-hidden="true" href="#decryption-1">#</a></h3>
+<p>$$
+m_1 = y^d \ mod \ q \ m_2 = y^d \ mod \ p
+$$</p>
+<p>通过预处理出 $(d \ mod \ q)$ 和 $(d \ mod \ p)$，将上式转化为</p>
+<p>$$
+m_1 = y^{d \ mod \ q} \ mod \ q \ m_2 = y^{d \ mod \ p} \ mod \ p
+$$</p>
+<p>则此时原文</p>
+<p>$$
+x = m_2 + q \times (p^{-1} \times (m_1 - m_2) \ mod \ q)
+$$</p>
 
 
 
