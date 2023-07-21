@@ -21,7 +21,7 @@
   <meta name="description" content="use {{&lt; toc &gt;}} to show the category" />
   <meta name="author" content="Jiaangk">
   <meta name="keywords" content="Algorithm, Cryptography, Timing Attack">
-  <title>计时攻击基础：Montgomery模乘 | Jiaangk&#39;s Blog</title>
+  <title>计时攻击基础：Montgomery模乘 | Jiaangk Blog</title>
   <link rel="canonical" href="https://jiaangk.github.io/posts/montgomery-mod/" />
   
 
@@ -29,7 +29,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:description" content="use {{&lt; toc &gt;}} to show the category" />
   <meta property="og:title" content="计时攻击基础：Montgomery模乘" />
-  <meta property="og:site_name" content="Jiaangk&#39;s Blog" />
+  <meta property="og:site_name" content="Jiaangk Blog" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:url" content="https://jiaangk.github.io/posts/montgomery-mod/" />
   <meta property="og:locale" content="en-us" />
@@ -48,7 +48,7 @@
 
   
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="计时攻击基础：Montgomery模乘 | Jiaangk&#39;s Blog" />
+  <meta name="twitter:title" content="计时攻击基础：Montgomery模乘 | Jiaangk Blog" />
   <meta name="twitter:description" content="use {{&lt; toc &gt;}} to show the category" />
   <meta name="twitter:domain" content="https://jiaangk.github.io/posts/montgomery-mod/" />
 
@@ -110,8 +110,8 @@
 
 </button>
       <div class="navbar-brand">
-        <a class="logo navbar-button" href="https://jiaangk.github.io" title="Jiaangk&#39;s Blog">
-          <span>Jiaangk&#39;s Blog</span>
+        <a class="logo navbar-button" href="https://jiaangk.github.io" title="Jiaangk Blog">
+          <span>Jiaangk Blog</span>
         </a>
       </div>
       <nav class="navbar" role="navigation">
@@ -133,6 +133,12 @@
             <li class="nav-bar-item">
               <a class="nav-link navbar-button" href="/archives/" title="archives">
                 <span>archives</span>
+              </a>
+            </li>
+          
+            <li class="nav-bar-item">
+              <a class="nav-link navbar-button" href="/link/" title="LINK">
+                <span>link</span>
               </a>
             </li>
           
@@ -279,13 +285,20 @@ Jiaangk</span>
         
           <p>由于模运算非常慢，因此在实现RSA等算法时，引入了Montgomery模乘将模运算简化成了减法运算来进行，加快了模运算进行的速度。</p>
 <h2 id="问题的提出">问题的提出<a hidden class="heading-anchor" aria-hidden="true" href="#问题的提出">#</a></h2>
-<p>加速 $xy \ mod \ N$ ，使得运算中不产生模 $N$ 运算。</p>
+<p>加速 $xy \ mod \ N$ ，使得运算中不产生模 $N$ 运算。 $x, y$ 保证 $x, y &lt; N$。</p>
 <h2 id="montgomery约减">Montgomery约减<a hidden class="heading-anchor" aria-hidden="true" href="#montgomery约减">#</a></h2>
-<p>定义Montgomery约减 $REDC(T) = TR^{-1} \ mod \ N$ 。其中 $R &gt; N$ 且 $gcd(N, R) = 1$ ， $R^-1$ 为 $R$ 在模 $N$ 意义下的逆元，即 $RR^{-1} \equiv 1 (mod \ N)$ 。取 $N'$ 使得 $RR^{-1} - NN' = 1$ ，由模运算的定义这样的 $N'$ 显然存在。</p>
+<p>定义Montgomery约减 $REDC(T) = TR^{-1} \ mod \ N$ 。其中 $R &gt; N$ 且 $gcd(N, R) = 1$ ， $R^-1$ 为 $R$ 在模 $N$ 意义下的逆元，即 $RR^{-1} \equiv 1 (mod \ N)$ 。取 $N'$ 使得 $RR^{-1} - NN' = 1$ ，由模运算的定义这样的 $N'$ 显然存在。算法的输入 $T$ 保证 $T &lt; NR$。</p>
 <p>Montgomery约减的算法描述如下：</p>
 <p><img src="/images/redc.png" alt=""></p>
+<p>首先来证明 $t$ 是一个整数：由 $NN' = RR^{-1} -1$ 得 $mN \equiv TNN' \equiv -T (mod \ R)$，故 $T + mN \equiv 0 (mod \ R)$，则 $t$ 是一个整数。其次证明 $t &lt; 2N$，即用一次减法必然能得到要求的解： $m &lt; R$ ，故 $mN &lt; NR$ ，结合前提 $T &lt; NR$ , 有 $mN + T &lt; 2NR$ ， $t = \frac{mN + T}{R} &lt; 2N$ 。</p>
+<h2 id="montgomery模乘">Montgomery模乘<a hidden class="heading-anchor" aria-hidden="true" href="#montgomery模乘">#</a></h2>
+<p>假设现在正在进行RSA算法，则 $N$ 为质数，此时若取 $R = 2^k$ ， $k$ 为一整数，则此时的模 $R$ 运算只需使用逻辑和位移运算即可完成，故在数据非常大的时候（如1024位），其运算速度将快于传统的模运算。</p>
+<p>回到最开始的问题，设 $z = xy \ mod \ N$</p>
+<p>$$ z = REDC(zR) \\ = REDC(zRRR^{-1}) \\ = REDC(REDC(zRR)) \\ = REDC(REDC((xR)(yR))) \\ = REDC(REDC(REDC(x(RR \ mod \ N))REDC(y(RR \ mod \ N)))) $$</p>
+<p>预处理好 $RR \ mod \ N$ ，即可在不进行模 $N$ 运算的情况下计算出 $xy \ mod \ N$的结果。</p>
 <h2 id="参考文献">参考文献<a hidden class="heading-anchor" aria-hidden="true" href="#参考文献">#</a></h2>
 <p>[1] P. L. Montgomery, “Modular multiplication without trial division,” Math. Comp., vol. 44, no. 170, pp. 519–521, 1985, doi: 10.1090/S0025-5718-1985-0777282-X.</p>
+<p>[2] “蒙哥马利模乘算法简介_模乘运算_BalrogMirthrandir的博客-CSDN博客.” <a href="https://blog.csdn.net/zhushuanghe/article/details/121940152">https://blog.csdn.net/zhushuanghe/article/details/121940152</a> (accessed Jul. 21, 2023).</p>
 
 
 
@@ -389,7 +402,7 @@ Tagged with</span>
       </li>
     </ul>
     <div class="copyright">
-       &copy; 2023 Jiaangk&#39;s Blog
+       &copy; 2023 Jiaangk Blog
       
     </div>
   </div>

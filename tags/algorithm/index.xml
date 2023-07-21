@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Algorithm on Jiaangk&#39;s Blog</title>
+    <title>Algorithm on Jiaangk Blog</title>
     <link>https://jiaangk.github.io/tags/algorithm/</link>
-    <description>Recent content in Algorithm on Jiaangk&#39;s Blog</description>
+    <description>Recent content in Algorithm on Jiaangk Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 21 Jul 2023 20:41:00 +0800</lastBuildDate><atom:link href="https://jiaangk.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
@@ -14,10 +14,10 @@
       
       <guid>https://jiaangk.github.io/posts/montgomery-mod/</guid>
       <description>由于模运算非常慢，因此在实现RSA等算法时，引入了Montgomery模乘将模运算简化成了减法运算来进行，加快了模运算进行的速度。
-问题的提出 加速 $xy \ mod \ N$ ，使得运算中不产生模 $N$ 运算。
-Montgomery约减 定义Montgomery约减 $REDC(T) = TR^{-1} \ mod \ N$ 。其中 $R &amp;gt; N$ 且 $gcd(N, R) = 1$ ， $R^-1$ 为 $R$ 在模 $N$ 意义下的逆元，即 $RR^{-1} \equiv 1 (mod \ N)$ 。取 $N&#39;$ 使得 $RR^{-1} - NN&#39; = 1$ ，由模运算的定义这样的 $N&#39;$ 显然存在。
+问题的提出 加速 $xy \ mod \ N$ ，使得运算中不产生模 $N$ 运算。 $x, y$ 保证 $x, y &amp;lt; N$。
+Montgomery约减 定义Montgomery约减 $REDC(T) = TR^{-1} \ mod \ N$ 。其中 $R &amp;gt; N$ 且 $gcd(N, R) = 1$ ， $R^-1$ 为 $R$ 在模 $N$ 意义下的逆元，即 $RR^{-1} \equiv 1 (mod \ N)$ 。取 $N&#39;$ 使得 $RR^{-1} - NN&#39; = 1$ ，由模运算的定义这样的 $N&#39;$ 显然存在。算法的输入 $T$ 保证 $T &amp;lt; NR$。
 Montgomery约减的算法描述如下：
-参考文献 [1] P. L. Montgomery, “Modular multiplication without trial division,” Math. Comp., vol. 44, no. 170, pp. 519–521, 1985, doi: 10.1090/S0025-5718-1985-0777282-X.</description>
+首先来证明 $t$ 是一个整数：由 $NN&#39; = RR^{-1} -1$ 得 $mN \equiv TNN&#39; \equiv -T (mod \ R)$，故 $T + mN \equiv 0 (mod \ R)$，则 $t$ 是一个整数。其次证明 $t &amp;lt; 2N$，即用一次减法必然能得到要求的解： $m &amp;lt; R$ ，故 $mN &amp;lt; NR$ ，结合前提 $T &amp;lt; NR$ , 有 $mN + T &amp;lt; 2NR$ ， $t = \frac{mN + T}{R} &amp;lt; 2N$ 。</description>
     </item>
     
     <item>

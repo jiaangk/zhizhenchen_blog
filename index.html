@@ -21,22 +21,22 @@
   <meta name="description" content="一个平凡的计算机科学专业学生" />
   <meta name="author" content="Jiaangk">
   <meta name="keywords" content="">
-  <title>Jiaangk&#39;s Blog</title>
+  <title>Jiaangk Blog</title>
   <link rel="canonical" href="https://jiaangk.github.io/" />
   
     <link
       href="/index.xml"
       rel="alternate"
       type="application/rss+xml"
-      title="Jiaangk&#39;s Blog"
+      title="Jiaangk Blog"
     />
   
 
   
   <meta property="og:type" content="website" />
   <meta property="og:description" content="一个平凡的计算机科学专业学生" />
-  <meta property="og:title" content="Jiaangk&#39;s Blog" />
-  <meta property="og:site_name" content="Jiaangk&#39;s Blog" />
+  <meta property="og:title" content="Jiaangk Blog" />
+  <meta property="og:site_name" content="Jiaangk Blog" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:url" content="https://jiaangk.github.io/" />
   <meta property="og:locale" content="en-us" />
@@ -45,7 +45,7 @@
 
   
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Jiaangk&#39;s Blog" />
+  <meta name="twitter:title" content="Jiaangk Blog" />
   <meta name="twitter:description" content="一个平凡的计算机科学专业学生" />
   <meta name="twitter:domain" content="https://jiaangk.github.io/" />
 
@@ -107,8 +107,8 @@
 
 </button>
       <div class="navbar-brand">
-        <a class="logo navbar-button" href="https://jiaangk.github.io" title="Jiaangk&#39;s Blog">
-          <span>Jiaangk&#39;s Blog</span>
+        <a class="logo navbar-button" href="https://jiaangk.github.io" title="Jiaangk Blog">
+          <span>Jiaangk Blog</span>
         </a>
       </div>
       <nav class="navbar" role="navigation">
@@ -130,6 +130,12 @@
             <li class="nav-bar-item">
               <a class="nav-link navbar-button" href="/archives/" title="archives">
                 <span>archives</span>
+              </a>
+            </li>
+          
+            <li class="nav-bar-item">
+              <a class="nav-link navbar-button" href="/link/" title="LINK">
+                <span>link</span>
               </a>
             </li>
           
@@ -195,10 +201,12 @@
         
           <div class="content summary">
             <p>由于模运算非常慢，因此在实现RSA等算法时，引入了Montgomery模乘将模运算简化成了减法运算来进行，加快了模运算进行的速度。
-问题的提出 加速 $xy \ mod \ N$ ，使得运算中不产生模 $N$ 运算。
-Montgomery约减 定义Montgomery约减 $REDC(T) = TR^{-1} \ mod \ N$ 。其中 $R &gt; N$ 且 $gcd(N, R) = 1$ ， $R^-1$ 为 $R$ 在模 $N$ 意义下的逆元，即 $RR^{-1} \equiv 1 (mod \ N)$ 。取 $N'$ 使得 $RR^{-1} - NN' = 1$ ，由模运算的定义这样的 $N'$ 显然存在。
+问题的提出 加速 $xy \ mod \ N$ ，使得运算中不产生模 $N$ 运算。 $x, y$ 保证 $x, y &lt; N$。
+Montgomery约减 定义Montgomery约减 $REDC(T) = TR^{-1} \ mod \ N$ 。其中 $R &gt; N$ 且 $gcd(N, R) = 1$ ， $R^-1$ 为 $R$ 在模 $N$ 意义下的逆元，即 $RR^{-1} \equiv 1 (mod \ N)$ 。取 $N'$ 使得 $RR^{-1} - NN' = 1$ ，由模运算的定义这样的 $N'$ 显然存在。算法的输入 $T$ 保证 $T &lt; NR$。
 Montgomery约减的算法描述如下：
-参考文献 [1] P. L. Montgomery, “Modular multiplication without trial division,” Math. Comp., vol. 44, no. 170, pp. 519–521, 1985, doi: 10.1090/S0025-5718-1985-0777282-X.</p>
+首先来证明 $t$ 是一个整数：由 $NN' = RR^{-1} -1$ 得 $mN \equiv TNN' \equiv -T (mod \ R)$，故 $T + mN \equiv 0 (mod \ R)$，则 $t$ 是一个整数。其次证明 $t &lt; 2N$，即用一次减法必然能得到要求的解： $m &lt; R$ ，故 $mN &lt; NR$ ，结合前提 $T &lt; NR$ , 有 $mN + T &lt; 2NR$ ， $t = \frac{mN + T}{R} &lt; 2N$ 。</p>
+            
+              <span class="hellip">&hellip;</span>
             
           </div>
           <a class="readmore" href="https://jiaangk.github.io/posts/montgomery-mod/" aria-label="READ MORE">READ MORE</a>
@@ -267,7 +275,7 @@ $$ x = y^d \ mod \ n \\x' = x^{ed} \ mod \ n $$</p>
       </li>
     </ul>
     <div class="copyright">
-       &copy; 2023 Jiaangk&#39;s Blog
+       &copy; 2023 Jiaangk Blog
       
     </div>
   </div>
