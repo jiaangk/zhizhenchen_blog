@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Jiaangk&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Jul 2023 11:32:00 +0800</lastBuildDate><atom:link href="https://jiaangk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Jul 2023 13:32:00 +0800</lastBuildDate><atom:link href="https://jiaangk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计时攻击基础：Montgomery模乘</title>
+      <link>https://jiaangk.github.io/posts/montgomery-mod/</link>
+      <pubDate>Wed, 12 Jul 2023 13:32:00 +0800</pubDate>
+      
+      <guid>https://jiaangk.github.io/posts/montgomery-mod/</guid>
+      <description>RSA Generation  取两个大质数 $p$ 和 $q$ ，为了安全性 $p$ 和 $q$ 长度应 大于 $2048$ 位； 设 $n = pq$； 设 $m = \phi(n) = (p-1)(q-1)$； 取 $e$，使得 $2 &amp;lt; e &amp;lt; m$且 $gcd(e, m) = 1$； 取 $d$，使得 $d \times e \equiv 1 \ (mod\ m)$； 此时，公钥为 $(n, e)$，私钥为 $(n, d)$。  Encryption 约定 $x$ 为 plaintext， $y$ 为 cyphertext。
+$$ y = x^e \ mod \ n $$
+Decryption $$ x = y^d\ mod \ n $$
+Proof 当 $x$ 与 $n$ 互质时，有
+$$ x = y^d \ mod \ n \\x&#39; = x^{ed} \ mod \ n $$</description>
+    </item>
+    
     <item>
       <title>计时攻击基础：RSA算法及其实现</title>
       <link>https://jiaangk.github.io/posts/rsa-crt/</link>
@@ -17,7 +30,7 @@
 $$ y = x^e \ mod \ n $$
 Decryption $$ x = y^d\ mod \ n $$
 Proof 当 $x$ 与 $n$ 互质时，有
-$$ x = y^d \ mod \ n \\x = x^{ed} \ mod \ n $$</description>
+$$ x = y^d \ mod \ n \\x&#39; = x^{ed} \ mod \ n $$</description>
     </item>
     
   </channel>
