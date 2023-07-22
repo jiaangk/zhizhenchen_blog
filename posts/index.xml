@@ -27,10 +27,10 @@ Montgomery约减的算法描述如下：
       
       <guid>https://jiaangk.github.io/posts/rsa-crt/</guid>
       <description>RSA Generation  取两个大质数 $p$ 和 $q$ ，为了安全性 $p$ 和 $q$ 长度应 大于 $2048$ 位； 设 $n = pq$； 设 $m = \phi(n) = (p-1)(q-1)$； 取 $e$，使得 $2 &amp;lt; e &amp;lt; m$且 $gcd(e, m) = 1$； 取 $d$，使得 $d \times e \equiv 1 \ (mod\ m)$； 此时，公钥为 $(n, e)$，私钥为 $(n, d)$。  Encryption 约定 $x$ 为 plaintext， $y$ 为 cyphertext。
-$$ y = x^e \ mod \ n $$
-Decryption $$ x = y^d\ mod \ n $$
+$ y = x^e \ mod \ n $
+Decryption $ x = y^d\ mod \ n $
 Proof 当 $x$ 与 $n$ 互质时，有
-$$ x = y^d \ mod \ n \\x&#39; = x^{ed} \ mod \ n $$</description>
+$ x = y^d \ mod \ n \\x&#39; = x^{ed} \ mod \ n $</description>
     </item>
     
   </channel>

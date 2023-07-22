@@ -254,7 +254,7 @@
 
 
 <svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path d='M256 48C141.13 48 48 141.13 48 256c0 114.69 93.32 208 208 208 114.86 0 208-93.14 208-208 0-114.69-93.31-208-208-208zm108 240H244a4 4 0 01-4-4V116a4 4 0 014-4h24a4 4 0 014 4v140h92a4 4 0 014 4v24a4 4 0 01-4 4z'/></svg>
-a min to read</span>
+2 mins to read</span>
         
           <span>
 
@@ -291,10 +291,21 @@ Zhizhen Chen</span>
 <p>Montgomery约减的算法描述如下：</p>
 <p><img src="/images/redc.png" alt=""></p>
 <p>首先来证明 $t$ 是一个整数：由 $NN' = RR^{-1} -1$ 得 $mN \equiv TNN' \equiv -T (mod \ R)$，故 $T + mN \equiv 0 (mod \ R)$，则 $t$ 是一个整数。其次证明 $t &lt; 2N$，即用一次减法必然能得到要求的解： $m &lt; R$ ，故 $mN &lt; NR$ ，结合前提 $T &lt; NR$ , 有 $mN + T &lt; 2NR$ ， $t = \frac{mN + T}{R} &lt; 2N$ 。</p>
+<p>结果的正确性说明：</p>
+<p>$
+t \equiv \frac{T + mN}{R} \\
+\equiv \frac{T + N((T \ mod \ R)N' \ mod \ R)}{R} \\
+\equiv \frac{T + N(TN' mod R)}{R} \\
+\equiv \frac{T + TNN' - \lfloor \frac{TN'}{R} \rfloor RN}{R} \\
+\equiv \frac{T + TNN'}{R} \\
+\equiv \frac{T(1 + NN')}{R} \\
+\equiv \frac{TRR^{-1}}{R} \\
+\equiv TR^{-1} (mod \ N)
+$</p>
 <h2 id="montgomery模乘">Montgomery模乘<a hidden class="heading-anchor" aria-hidden="true" href="#montgomery模乘">#</a></h2>
-<p>假设现在正在进行RSA算法，则 $N$ 为质数，此时若取 $R = 2^k$ ， $k$ 为一整数，则此时的模 $R$ 运算只需使用逻辑和位移运算即可完成，故在数据非常大的时候（如1024位），其运算速度将快于传统的模运算。</p>
+<p>假设现在正在进行RSA算法，则 $N$ 为质数，此时若取 $R = 2^k$ ， $k$ 为一正整数，则此时的模 $R$ 运算只需使用逻辑及位移运算即可完成，故在数据非常大的时候（如1024位），其运算速度将快于传统的模运算。</p>
 <p>回到最开始的问题，设 $z = xy \ mod \ N$</p>
-<p>$$ z = REDC(zR) \\ = REDC(zRRR^{-1}) \\ = REDC(REDC(zRR)) \\ = REDC(REDC((xR)(yR))) \\ = REDC(REDC(REDC(x(RR \ mod \ N))REDC(y(RR \ mod \ N)))) $$</p>
+<p>$ z = REDC(zR) \\ = REDC(zRRR^{-1}) \\ = REDC(REDC(zRR)) \\ = REDC(REDC((xR)(yR))) \\ = REDC(REDC(REDC(x(RR \ mod \ N))REDC(y(RR \ mod \ N)))) $</p>
 <p>预处理好 $RR \ mod \ N$ ，即可在不进行模 $N$ 运算的情况下计算出 $xy \ mod \ N$的结果。</p>
 <h2 id="参考文献">参考文献<a hidden class="heading-anchor" aria-hidden="true" href="#参考文献">#</a></h2>
 <p>[1] P. L. Montgomery, “Modular multiplication without trial division,” Math. Comp., vol. 44, no. 170, pp. 519–521, 1985, doi: 10.1090/S0025-5718-1985-0777282-X.</p>
