@@ -6,9 +6,38 @@
     <description>Recent content in Cryptography on Jiaangk Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 21 Jul 2023 20:41:00 +0800</lastBuildDate><atom:link href="https://jiaangk.github.io/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Aug 2023 16:00:00 +0800</lastBuildDate><atom:link href="https://jiaangk.github.io/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>计时攻击基础：Montgomery模乘</title>
+      <title>Linux文件系统备忘录</title>
+      <link>https://jiaangk.github.io/posts/linux-filesystem/</link>
+      <pubDate>Mon, 28 Aug 2023 16:00:00 +0800</pubDate>
+      
+      <guid>https://jiaangk.github.io/posts/linux-filesystem/</guid>
+      <description>Linux文件系统与作为计算机启蒙所熟知的Windows系统有很大不同，以下面的系统：
+Linux version 6.1.0-11-amd64 (debian-kernel@lists.debian.org) (gcc-12 (Debian 12.2.0-14) 12.2.0, GNU ld (GNU Binutils for Debian) 2.40) #1 SMP PREEMPT_DYNAMIC Debian 6.1.38-4 (2023-08-08)
+为例，针对文件系统中的各个目录的功能制作一个备忘录方便查询。
+boot是存放引导文件的目录，如开机时选择系统所使用的grub等，同时核心映像也存放于此，如上图的系统核心vmlinuz，以及引导程序initrd。
+dev顾名思义即device，众所周知外部设备以文件的形式存在在Linux系统中，该目录下的文件提供了可以直接操控外部设备的接口。从本质上来说，dev目录被udev所管理，借由sysfs虚拟文件系统实现老版本中devfs的功能，提供用户空间控制设备的途径。
+etc，在拉丁语中的含义为et cetera，翻译成中文就是“等等”，意为一些杂项文件，存放了系统和应用程序的配置文件。
+home用户目录。
+lost+found存放了系统非法关机遗留的部分文件。
+media为系统自动挂载的文件系统的入口，如U盘等。
+mnt，理解为mount，为用户手动使用诸如mount命令挂载的文件系统的入口。
+opt，理解为optional，，为一些大型软件或第三方软件的安装目录（额外软件）。
+proc是procfs虚拟文件系统的挂载点，挂载的是系统内核相关文件。可以发现每一个正在运行的程序所对应的PID进程号，都在该目录下有对应的目录，保存了该程序的相关信息。
+root是root超级用户的用户目录。
+run是临时目录，储存系统运行以来的信息，并于每次重启时重置。
+srv，理解为service，储存服务启动后需要的一些资源。
+sys是sysfs虚拟文件系统的挂载点，挂载的是外部设备。需要注意的是，sys/devices和sys/dev需要和dev目录区别开来，sys/devices按照总线类型保存了所有的系统设备，sys/dev则按照块设备和字符设备的区别建立了指向sys/devices中实际设备的文件，可以在这些文件中查看到设备的具体信息和参数，dev下则是通过udev产生的用户空间内可用的外部设备接口。
+tmp，理解为temporary，存放临时文件。
+usr，理解为unix shared resources，存放了应用程序、运行库等等文件。
+var，理解为variable，存放了各种容易被修改的文件，如运行日志等。
+usr/lib系列目录，即library，存储了各种动态库静态库文件。
+usr/bin，usr/sbin，理解为binary，储存了在terminal中可以调用的二进制文件。其中的sbin代表了super user，意为只有在超级用户模式下才能调用的文件。</description>
+    </item>
+    
+    <item>
+      <title>Montgomery模乘</title>
       <link>https://jiaangk.github.io/posts/montgomery-mod/</link>
       <pubDate>Fri, 21 Jul 2023 20:41:00 +0800</pubDate>
       
@@ -21,7 +50,7 @@ Montgomery约减的算法描述如下：
     </item>
     
     <item>
-      <title>计时攻击基础：RSA算法及其实现</title>
+      <title>RSA算法及其实现</title>
       <link>https://jiaangk.github.io/posts/rsa-crt/</link>
       <pubDate>Sun, 09 Jul 2023 11:32:00 +0800</pubDate>
       
