@@ -15,9 +15,9 @@
       <guid>https://jiaangk.github.io/posts/montgomery-mod/</guid>
       <description>由于模运算非常慢，因此在实现RSA等算法时，引入了Montgomery模乘将模运算简化成了减法运算来进行，加快了模运算进行的速度。
 问题的提出 加速 $xy \ mod \ N$ ，使得运算中不产生模 $N$ 运算。 $x, y$ 保证 $x, y &amp;lt; N$。
-Montgomery约减 定义Montgomery约减 $REDC(T) = TR^{-1} \ mod \ N$ 。其中 $R &amp;gt; N$ 且 $gcd(N, R) = 1$ ， $R^-1$ 为 $R$ 在模 $N$ 意义下的逆元，即 $RR^{-1} \equiv 1 (mod \ N)$ 。取 $N&#39;$ 使得 $RR^{-1} - NN&#39; = 1$ ，由模运算的定义这样的 $N&#39;$ 显然存在。算法的输入 $T$ 保证 $T &amp;lt; NR$。
+Montgomery约减 定义Montgomery约减 $REDC(T) = TR^{-1} \ mod \ N$ 。其中 $R &amp;gt; N$ 且 $gcd(N, R) = 1$ ， $R^-1$ 为 $R$ 在模 $N$ 意义下的逆元，即 $RR^{-1} \equiv 1 (mod \ N)$ 。取 $N&amp;rsquo;$ 使得 $RR^{-1} - NN&amp;rsquo; = 1$ ，由模运算的定义这样的 $N&amp;rsquo;$ 显然存在。算法的输入 $T$ 保证 $T &amp;lt; NR$。
 Montgomery约减的算法描述如下：
-首先来证明 $t$ 是一个整数：由 $NN&#39; = RR^{-1} -1$ 得 $mN \equiv TNN&#39; \equiv -T (mod \ R)$，故 $T + mN \equiv 0 (mod \ R)$，则 $t$ 是一个整数。其次证明 $t &amp;lt; 2N$，即用一次减法必然能得到要求的解： $m &amp;lt; R$ ，故 $mN &amp;lt; NR$ ，结合前提 $T &amp;lt; NR$ , 有 $mN + T &amp;lt; 2NR$ ， $t = \frac{mN + T}{R} &amp;lt; 2N$ 。</description>
+首先来证明 $t$ 是一个整数：由 $NN&amp;rsquo; = RR^{-1} -1$ 得 $mN \equiv TNN&amp;rsquo; \equiv -T (mod \ R)$，故 $T + mN \equiv 0 (mod \ R)$，则 $t$ 是一个整数。其次证明 $t &amp;lt; 2N$，即用一次减法必然能得到要求的解： $m &amp;lt; R$ ，故 $mN &amp;lt; NR$ ，结合前提 $T &amp;lt; NR$ , 有 $mN + T &amp;lt; 2NR$ ， $t = \frac{mN + T}{R} &amp;lt; 2N$ 。</description>
     </item>
     
     <item>
@@ -26,11 +26,12 @@ Montgomery约减的算法描述如下：
       <pubDate>Sun, 09 Jul 2023 11:32:00 +0800</pubDate>
       
       <guid>https://jiaangk.github.io/posts/rsa-crt/</guid>
-      <description>RSA Generation  取两个大质数 $p$ 和 $q$ ，为了安全性 $p$ 和 $q$ 长度应 大于 $2048$ 位； 设 $n = pq$； 设 $m = \phi(n) = (p-1)(q-1)$； 取 $e$，使得 $2 &amp;lt; e &amp;lt; m$且 $gcd(e, m) = 1$； 取 $d$，使得 $d \times e \equiv 1 \ (mod\ m)$； 此时，公钥为 $(n, e)$，私钥为 $(n, d)$。  Encryption 约定 $x$ 为 plaintext， $y$ 为 cyphertext。
+      <description>RSA Generation 取两个大质数 $p$ 和 $q$ ，为了安全性 $p$ 和 $q$ 长度应 大于 $2048$ 位； 设 $n = pq$； 设 $m = \phi(n) = (p-1)(q-1)$； 取 $e$，使得 $2 &amp;lt; e &amp;lt; m$且 $gcd(e, m) = 1$； 取 $d$，使得 $d \times e \equiv 1 \ (mod\ m)$； 此时，公钥为 $(n, e)$，私钥为 $(n, d)$。 Encryption 约定 $x$ 为 plaintext， $y$ 为 cyphertext。
 $ y = x^e \ mod \ n $
 Decryption $ x = y^d\ mod \ n $
 Proof 当 $x$ 与 $n$ 互质时，有
-$ x = y^d \ mod \ n \\x&#39; = x^{ed} \ mod \ n $</description>
+$ x = y^d \ mod \ n \\x&amp;rsquo; = x^{ed} \ mod \ n $
+设 $k$ 为一自然数，则由同余的定义，有</description>
     </item>
     
   </channel>
