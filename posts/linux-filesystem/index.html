@@ -384,18 +384,18 @@ CC BY-SA 4.0</span>
 <p><code>home</code>用户目录。</p>
 <p><code>lost+found</code>存放了系统非法关机遗留的部分文件。</p>
 <p><code>media</code>为系统自动挂载的文件系统的入口，如U盘等。</p>
-<p><code>mnt</code>，理解为mount，为用户手动使用诸如mount命令挂载的文件系统的入口。</p>
-<p><code>opt</code>，理解为optional，，为一些大型软件或第三方软件的安装目录（额外软件）。</p>
+<p><code>mnt</code>理解为mount，为用户手动使用诸如mount命令挂载的文件系统的入口。</p>
+<p><code>opt</code>理解为optional，为一些大型软件或第三方软件的安装目录（额外软件）。</p>
 <p><code>proc</code>是procfs虚拟文件系统的挂载点，挂载的是系统内核相关文件。可以发现每一个正在运行的程序所对应的PID进程号，都在该目录下有对应的目录，保存了该程序的相关信息。</p>
 <p><code>root</code>是root超级用户的用户目录。</p>
 <p><code>run</code>是临时目录，储存系统运行以来的信息，并于每次重启时重置。</p>
-<p><code>srv</code>，理解为service，储存服务启动后需要的一些资源。</p>
+<p><code>srv</code>理解为service，储存服务启动后需要的一些资源。</p>
 <p><code>sys</code>是sysfs虚拟文件系统的挂载点，挂载的是外部设备。需要注意的是，<code>sys/devices</code>和<code>sys/dev</code>需要和<code>dev</code>目录区别开来，<code>sys/devices</code>按照总线类型保存了所有的系统设备，<code>sys/dev</code>则按照块设备和字符设备的区别建立了指向<code>sys/devices</code>中实际设备的文件，可以在这些文件中查看到设备的具体信息和参数，<code>dev</code>下则是通过udev产生的用户空间内可用的外部设备接口。</p>
-<p><code>tmp</code>，理解为temporary，存放临时文件。</p>
-<p><code>usr</code>，理解为unix shared resources，存放了应用程序、运行库等等文件。</p>
-<p><code>var</code>，理解为variable，存放了各种容易被修改的文件，如运行日志等。</p>
+<p><code>tmp</code>理解为temporary，存放临时文件。</p>
+<p><code>usr</code>理解为unix shared resources，存放了应用程序、运行库等等文件。</p>
+<p><code>var</code>理解为variable，存放了各种容易被修改的文件，如运行日志等。</p>
 <p><code>usr/lib</code>系列目录，即library，存储了各种动态库静态库文件。</p>
-<p><code>usr/bin</code>，<code>usr/sbin</code>，理解为binary，储存了在terminal中可以调用的二进制文件。其中的<code>sbin</code>代表了super user，意为只有在超级用户模式下才能调用的文件。</p>
+<p><code>usr/bin</code>，<code>usr/sbin</code>理解为binary，储存了在terminal中可以调用的二进制文件。其中的<code>sbin</code>代表了super user，意为只有在超级用户模式下才能调用的文件。</p>
 
 
 
