@@ -18,14 +18,5 @@
 Montgomery约减 定义Montgomery约减 $REDC(T) = TR^{-1} \ mod \ N$ 。其中 $R &amp;gt; N$ 且 $gcd(N, R) = 1$ ， $R^-1$ 为 $R$ 在模 $N$ 意义下的逆元，即 $RR^{-1} \equiv 1 (mod \ N)$ 。取 $N&amp;rsquo;$ 使得 $RR^{-1} - NN&amp;rsquo; = 1$ ，由模运算的定义这样的 $N&amp;rsquo;$ 显然存在。算法的输入 $T$ 保证 $T &amp;lt; NR$。</description>
     </item>
     
-    <item>
-      <title>RSA算法及其实现</title>
-      <link>https://jiaangk.github.io/posts/rsa-crt/</link>
-      <pubDate>Sun, 09 Jul 2023 11:32:00 +0800</pubDate>
-      
-      <guid>https://jiaangk.github.io/posts/rsa-crt/</guid>
-      <description>RSA Generation 取两个大质数 $p$ 和 $q$ ，为了安全性 $p$ 和 $q$ 长度应 大于 $2048$ 位； 设 $n = pq$； 设 $m = \phi(n) = (p-1)(q-1)$； 取 $e$，使得 $2 &amp;lt; e &amp;lt; m$且 $gcd(e, m) = 1$； 取 $d$，使得 $d \times e \equiv 1 \ (mod\ m)$； 此时，公钥为 $(n, e)$，私钥为 $(n, d)$。 Encryption 约定 $x$ 为 plaintext， $y$ 为 cyphertext。</description>
-    </item>
-    
   </channel>
 </rss>
