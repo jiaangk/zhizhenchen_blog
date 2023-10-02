@@ -423,7 +423,7 @@ CC BY-SA 4.0</span>
 </span></span><span class="line"><span class="cl">sudo ./bin/stop <span class="c1"># 相当于docker stop</span>
 </span></span><span class="line"><span class="cl">sudo ./bin/shell <span class="c1"># 开启一个容器内终端</span>
 </span></span></code></pre></div><p>同时也提供了<code>docker</code>、<code>logs</code>、<code>backup-config</code>等工具用来维护，再次不作过多赘述（查看<a href="https://github.com/overleaf/toolkit">Github</a>获取更多信息）。</p>
-<p>初始状态的Overleaf里并不完全含有我们需要的$\LaTeX$包，因此需要进入容器终端来进行更新操作。由于众所周知的原因，因此需要换成国内的CTAX（Tex包管理器）的源<a href="https://help.mirrors.cernet.edu.cn/CTAN/">https://help.mirrors.cernet.edu.cn/CTAN/</a>：</p>
+<p>初始状态的Overleaf里并不完全含有我们需要的$\LaTeX$包，因此需要进入容器终端来进行更新操作。由于众所周知的原因，因此需要换成国内的CTAN（Tex包管理器）的源<a href="https://help.mirrors.cernet.edu.cn/CTAN/">https://help.mirrors.cernet.edu.cn/CTAN/</a>：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ./bin/shell
 </span></span><span class="line"><span class="cl">tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet <span class="c1"># 更换软件源，以清华源为例</span>
 </span></span><span class="line"><span class="cl">tlmgr update --self --all <span class="c1"># 更新已安装的包</span>
