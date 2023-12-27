@@ -434,7 +434,9 @@ CC BY-SA 4.0</span>
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>fonts-noto-ui-core fonts-noto-ui-extra fonts-noto-unhinted fonts-texgyre -y <span class="c1"># 更新字体</span>
 </span></span><span class="line"><span class="cl"><span class="nb">exit</span>
 </span></span></code></pre></div><p>之后重启容器即可</p>
-<h2 id="修复没有xelatex">修复没有XeLaTex<a hidden class="heading-anchor" aria-hidden="true" href="#修复没有xelatex">#</a></h2>
+<p>在设置完成之后，Overleaf默认是开机自启动的，这会消耗大量的系统资源。如果要禁用开机自启动，只需要禁用相应Docker容器的自启动即可：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo docker update --restart<span class="o">=</span>no sharelatex redis mongo
+</span></span></code></pre></div><h2 id="修复xelatex">修复XeLaTex<a hidden class="heading-anchor" aria-hidden="true" href="#修复xelatex">#</a></h2>
 <p>在使用中发现，如果编译器选择了XeLaTex则会直接报错。我们在容器的终端中排查问题：</p>
 <p><img src="/images/docker_bugfix.png" alt=""></p>
 <p>可以观察到，即使是更新了完整的LaTex，在系统的PATH中仍然没有XeLaTex（在<code>/bin/</code>中有xetex，但是Overleaf无法识别）。因此我们只需要创建从Texlive目录到<code>/usr/local/bin</code>的软链接即可。首先进入Texlive的二进制可执行文件目录，查看XeLaTex的相关文件是否存在（如果不存在，则需要执行维护中的更新步骤）：</p>
@@ -564,29 +566,15 @@ Tagged with</span>
 
 <script defer src="https://jiaangk.github.io/js/main.min.22edf5bac5dfa68a0215a42702e2a71503d57bedadc157af46b990895734f033.js" integrity="sha256-Iu31usXfpooCFaQnAuKnFQPVe+2twVevRrmQiVc08DM=" crossorigin="anonymous" async></script>
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-  integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
-  crossorigin="anonymous"
-/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 
-<script
-  defer
-  src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-  integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-  crossorigin="anonymous"
-></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
 
 
-<script
-  defer
-  src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-  integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
-  crossorigin="anonymous"
-  onload="renderMathInElement(document.body);"
-></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement(document.body, {

@@ -20,37 +20,37 @@
   <meta name="color-scheme" content="dark light">
   <meta name="description" content="use {{&lt; toc &gt;}} to show the category" />
   <meta name="author" content="Zhizhen Chen">
-  <meta name="keywords" content="Cryptography, Number Theory, Algorithm">
-  <title>RSA算法及其实现 | Jiaangk Blog</title>
-  <link rel="canonical" href="https://jiaangk.github.io/posts/rsa-crt/" />
+  <meta name="keywords" content="Depp Learning, Optimization, Entropy">
+  <title>二分类相关的损失函数的关系 | Jiaangk Blog</title>
+  <link rel="canonical" href="https://jiaangk.github.io/posts/binary-entropy/" />
   
 
   
   <meta property="og:type" content="article" />
   <meta property="og:description" content="use {{&lt; toc &gt;}} to show the category" />
-  <meta property="og:title" content="RSA算法及其实现" />
+  <meta property="og:title" content="二分类相关的损失函数的关系" />
   <meta property="og:site_name" content="Jiaangk Blog" />
   <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:url" content="https://jiaangk.github.io/posts/rsa-crt/" />
+  <meta property="og:url" content="https://jiaangk.github.io/posts/binary-entropy/" />
   <meta property="og:locale" content="en-us" />
 
   
-    <meta property="article:published_time" content="2023-07-09" />
-    <meta property="article:modified_time" content="2023-07-09" />
+    <meta property="article:published_time" content="2023-12-27" />
+    <meta property="article:modified_time" content="2023-12-27" />
      
-      <meta property="article:tag" content="Cryptography" />
+      <meta property="article:tag" content="Depp Learning" />
     
-      <meta property="article:tag" content="Number Theory" />
+      <meta property="article:tag" content="Optimization" />
     
-      <meta property="article:tag" content="Algorithm" />
+      <meta property="article:tag" content="Entropy" />
      
   
 
   
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="RSA算法及其实现 | Jiaangk Blog" />
+  <meta name="twitter:title" content="二分类相关的损失函数的关系 | Jiaangk Blog" />
   <meta name="twitter:description" content="use {{&lt; toc &gt;}} to show the category" />
-  <meta name="twitter:domain" content="https://jiaangk.github.io/posts/rsa-crt/" />
+  <meta name="twitter:domain" content="https://jiaangk.github.io/posts/binary-entropy/" />
 
   
   
@@ -206,7 +206,7 @@
 
 
 <li class="active">
-  <a href="https://jiaangk.github.io/posts/rsa-crt/">RSA算法及其实现</a>
+  <a href="https://jiaangk.github.io/posts/binary-entropy/">二分类相关的损失函数的关系</a>
 </li>
 
 </ol>
@@ -225,7 +225,7 @@
 <main id="main">
   <div class="container has-padding">
     <div class="article-card post single">
-      <h1 class="title">RSA算法及其实现</h1>
+      <h1 class="title">二分类相关的损失函数的关系</h1>
       <div class="post-info">
         <span>
 
@@ -249,7 +249,7 @@
 
 
 
-<time datetime=2023-07-09T11:32:00&#43;0800 class="date">July 09, 2023</time></span>
+<time datetime=2023-12-27T19:00:00&#43;0800 class="date">December 27, 2023</time></span>
         
           <span>
 
@@ -370,86 +370,39 @@ CC BY-SA 4.0</span>
       </div>
       <article class="post-entry content">
         
-          <h2 id="rsa">RSA<a hidden class="heading-anchor" aria-hidden="true" href="#rsa">#</a></h2>
-<h3 id="generation">Generation<a hidden class="heading-anchor" aria-hidden="true" href="#generation">#</a></h3>
-<ol>
-<li>取两个大质数 $p$ 和 $q$ ，为了安全性 $p$ 和 $q$ 长度应 大于 $2048$ 位；</li>
-<li>设 $n = pq$；</li>
-<li>设 $m = \phi(n) = (p-1)(q-1)$；</li>
-<li>取 $e$，使得 $2 &lt; e &lt; m$且 $gcd(e, m) = 1$；</li>
-<li>取 $d$，使得 $d \times e \equiv 1 \ (mod\ m)$；</li>
-<li>此时，公钥为 $(n, e)$，私钥为 $(n, d)$。</li>
-</ol>
-<h3 id="encryption">Encryption<a hidden class="heading-anchor" aria-hidden="true" href="#encryption">#</a></h3>
-<p>约定 $x$ 为 <code>plaintext</code>， $y$ 为 <code>cyphertext</code>。</p>
-<p>$$
-y = x^e \ mod \ n
+          <p>在二分类问题中，常用到<code>torch.nn.BCELoss</code>和<code>torch.nn.BCEWithLogitsLoss</code>两个损失函数。这两个损失函数的定义式为：
+$$
+BCELoss(x, y) = H_y(x) = -\sum_i y_i\ln(x_i) + (1 - y_i)\ln(1 - x_i)
+$$
+其中$x$为预测值，$y$为实际值。这是一个典型的二值交叉熵函数，而<code>BCEWithLogitsLoss</code>则是在其基础之上，对每一个$x$使用$sigmoid$函数激活，具体地：
+$$
+x&rsquo;_i = sigmoid(x) = \frac{1}{1 + \exp(-x_i)}
+$$
+之后再将$x_i&rsquo;$作为输入的预测值，和$y$一起输入<code>BCELoss</code>函数，即
+$$
+BCEWithLogitsLoss(x, y) = BCELoss(x&rsquo;, y)
 $$</p>
-<h3 id="decryption">Decryption<a hidden class="heading-anchor" aria-hidden="true" href="#decryption">#</a></h3>
-<p>$$
-x = y^d\ mod \ n
-$$</p>
-<h3 id="proof">Proof<a hidden class="heading-anchor" aria-hidden="true" href="#proof">#</a></h3>
-<p>当 $x$ 与 $n$ 互质时，有</p>
-<p>$$
+<p>在二分类问题，我们得到一组未规范化的预测结果$h_1$和$h_2$，不妨设正样本为$h_1$，则softmax结果为
+$$
 \begin{align*}
-x &amp;= y^d \ mod \ n \\
-x&rsquo; &amp;= x^{ed} \ mod \ n
+x_i &amp;= \frac{\exp(h_1)}{\exp(h_1) + \exp(h_2)} \\
+&amp;= \frac{1}{1 + \exp(h_2 - h_1)}
 \end{align*}
-$$</p>
-<p>设 $k$ 为一自然数，则由同余的定义，有</p>
-<p>$$
+$$
+我们可以用$h = h_1 - h_2$来代替预测结果：
+$$
+x_i = \frac{1}{1 + \exp(-h)} = sigmoid(h)
+$$
+$h_1$和$h_2$对应的softmax回归的交叉熵损失函数为：
+$$
 \begin{align*}
-x&rsquo; &amp;= x^{km + 1} \ mod \ n \\
-&amp;= x \times (x^{\phi(n)})^k \ mod \ n
+loss(h, y) &amp;= -\sum_i y_i\ln(\frac{\exp(h_{i1})}{\exp(h_{i1}) + \exp(h_{i2})}) + (1 - y_i)\ln(\frac{\exp(h_{i2})}{\exp(h_{i1}) + \exp(h_{i2})}) \\
+&amp;= -\sum_i y_i \ln(\frac{1}{1 + \exp(-h)}) + (1 - y_i)\ln(1 - \frac{1}{1 + \exp(-h)}) \\
+&amp;= -\sum_i y_i\ln(sigmoid(h_i)) + (1 - y_i)\ln(1 - sigmoid(h_i)) \\
+&amp;= BCEWithLogitsLoss(h, y)
 \end{align*}
-$$</p>
-<p>由欧拉定理，得</p>
-<p>$$
-x&rsquo; = x \ mod \ n = x
-$$</p>
-<p>当 $x$ 与 $n$ 不互质时，不妨设 $x$ 为 $p$ 的倍数，记为 $x = ap$，其中 $a$ 是一正整数。</p>
-<p>$$
-\begin{align*}
-x^{\phi(q)} &amp;\equiv 1 \ (mod \ q) \\
-x^{k\phi(p)\phi(q)} &amp;\equiv 1 \ (mod \ q) \\
-x^{k\phi(p)\phi(q)} &amp;= 1 + bq
-\end{align*}
-$$</p>
-<p>则</p>
-<p>$$
-\begin{align*}
-x&rsquo; &amp;= x^{km+1} \ mod \ n \\
-&amp;= x \times (1 + bq) \ mod \ n \\
-&amp;= (x + bqx) \ mod \ n \\
-&amp;= x \ mod\  n = x
-\end{align*}
-$$</p>
-<h3 id="security">Security<a hidden class="heading-anchor" aria-hidden="true" href="#security">#</a></h3>
-<p>若想通过公钥推知私钥，则必须对密钥 $n$ 进行分解质因数，由于这是一个数论难题，因此只需要将 $n$ 设置的足够大，则可以确保安全性。</p>
-<h2 id="rsa-crt">RSA-CRT<a hidden class="heading-anchor" aria-hidden="true" href="#rsa-crt">#</a></h2>
-<p>由于接收者同时知道 $q$ 和 $p$ ，故由中国剩余定理(CRT)，将 $mod \ n$的操作拆分，可实现加速。</p>
-<h3 id="decryption-1">Decryption<a hidden class="heading-anchor" aria-hidden="true" href="#decryption-1">#</a></h3>
-<p>$$
-\begin{align*}
-m_1 &amp;= y^d \ mod \ q \\
-m_2 &amp;= y^d \ mod \ p
-\end{align*}
-$$</p>
-<p>通过预处理出 $(d \ mod \ q)$ 和 $(d \ mod \ p)$，将上式转化为</p>
-<p>$$
-\begin{align*}
-m_1 &amp;= y^{d \ mod \ q} \ mod \ q \\
-m_2 &amp;= y^{d \ mod \ p} \ mod \ p
-\end{align*}
-$$</p>
-<p>根据CRT即可在不对 $n$ 进行模运算的情况下求出原文，此处的结论是</p>
-<p>$$
-x = m_2 + q \times (p^{-1} \times (m_1 - m_2) \ mod \ q)
-$$</p>
-<p>注意后面的 $mod \ q$ 括号内的操作均视为在Galois域 $GF(q)$ 内进行的操作。</p>
-<h2 id="参考文献">参考文献<a hidden class="heading-anchor" aria-hidden="true" href="#参考文献">#</a></h2>
-<p>[1] “RSA —— 经典的非对称加密算法,” 知乎专栏. <a href="https://zhuanlan.zhihu.com/p/450180396">https://zhuanlan.zhihu.com/p/450180396</a></p>
+$$
+因此将未规范化的预测$h$直接使用<code>BCEWithLogitsLoss</code>损失函数即可得到其对应的softmax函数的损失函数。使用<code>tensor.sigmoid</code>将$h$处理之后输入<code>BCELoss</code>也能得到相同的结果。</p>
 
 
 
@@ -482,7 +435,7 @@ $$</p>
 
 
 
-Published At</span><time>2023-07-09 11:32 CST</time>
+Published At</span><time>2023-12-27 19:00 CST</time>
       
     </div>
 
@@ -513,11 +466,11 @@ Published At</span><time>2023-07-09 11:32 CST</time>
 Tagged with</span>
         <ul class="tags">
         
-          <li class="hashed-tag"><a href="https://jiaangk.github.io/tags/cryptography">Cryptography</a></li>
+          <li class="hashed-tag"><a href="https://jiaangk.github.io/tags/depp-learning">Depp Learning</a></li>
         
-          <li class="hashed-tag"><a href="https://jiaangk.github.io/tags/number-theory">Number Theory</a></li>
+          <li class="hashed-tag"><a href="https://jiaangk.github.io/tags/optimization">Optimization</a></li>
         
-          <li class="hashed-tag"><a href="https://jiaangk.github.io/tags/algorithm">Algorithm</a></li>
+          <li class="hashed-tag"><a href="https://jiaangk.github.io/tags/entropy">Entropy</a></li>
         
         </ul>
       </div>

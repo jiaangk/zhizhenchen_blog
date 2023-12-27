@@ -206,6 +206,25 @@
       
       <article class="post">
         <h3 class="title">
+          <a href="https://jiaangk.github.io/posts/binary-entropy/" title="二分类相关的损失函数的关系">二分类相关的损失函数的关系</a>
+        </h3>
+        
+          <div class="content summary">
+            <p>在二分类问题中，常用到torch.nn.BCELoss和torch.nn.BCEWithLogitsLoss两个损失函数。这两个损失函数的定义式为： $$ BCELoss(x, y) = H_y(x) = -\sum_i y_i\ln(x_i) + (1 - y_i)\ln(1 - x_i) $$ 其中$x$为预测值，$y$为实际值。这是一个典型的二值交叉熵函数，而BCEWithLogitsLoss则是在其基础之上，对每一个$x$使用$sigmoid$函数激活，具体地： $$ x&rsquo;_i = sigmoid(x) = \frac{1}{1 + \exp(-x_i)} $$ 之后再将$x_i&rsquo;$作为输入的预测值，和$y$一起输入BCELoss函数，即 $$ BCEWithLogitsLoss(x, y) = BCELoss(x&rsquo;, y) $$</p>
+            
+              <span class="hellip">&hellip;</span>
+            
+          </div>
+          <a class="readmore" href="https://jiaangk.github.io/posts/binary-entropy/" aria-label="READ MORE">READ MORE</a>
+        
+        <div class="date float-right">
+          
+          <time datetime="2023-12-27T19:00:00&#43;0800" class="date">December 27, 2023</time>
+        </div>
+      </article>
+      
+      <article class="post">
+        <h3 class="title">
           <a href="https://jiaangk.github.io/posts/latex-with-docker/" title="Linux上LaTeX开发环境的安装（及Docker）">Linux上LaTeX开发环境的安装（及Docker）</a>
         </h3>
         
@@ -341,29 +360,15 @@ Montgomery约减 定义Montgomery约减 $REDC(T) = TR^{-1} \ mod \ N$ 。其中 
 
 <script defer src="https://jiaangk.github.io/js/main.min.22edf5bac5dfa68a0215a42702e2a71503d57bedadc157af46b990895734f033.js" integrity="sha256-Iu31usXfpooCFaQnAuKnFQPVe+2twVevRrmQiVc08DM=" crossorigin="anonymous" async></script>
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-  integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
-  crossorigin="anonymous"
-/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 
-<script
-  defer
-  src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-  integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-  crossorigin="anonymous"
-></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
 
 
-<script
-  defer
-  src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-  integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
-  crossorigin="anonymous"
-  onload="renderMathInElement(document.body);"
-></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement(document.body, {

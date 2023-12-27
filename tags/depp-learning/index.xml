@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Depp Learning on Jiaangk Blog</title>
+    <link>https://jiaangk.github.io/tags/depp-learning/</link>
+    <description>Recent content in Depp Learning on Jiaangk Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Dec 2023 19:00:00 +0800</lastBuildDate><atom:link href="https://jiaangk.github.io/tags/depp-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>二分类相关的损失函数的关系</title>
+      <link>https://jiaangk.github.io/posts/binary-entropy/</link>
+      <pubDate>Wed, 27 Dec 2023 19:00:00 +0800</pubDate>
+      
+      <guid>https://jiaangk.github.io/posts/binary-entropy/</guid>
+      <description>在二分类问题中，常用到torch.nn.BCELoss和torch.nn.BCEWithLogitsLoss两个损失函数。这两个损失函数的定义式为： $$ BCELoss(x, y) = H_y(x) = -\sum_i y_i\ln(x_i) + (1 - y_i)\ln(1 - x_i) $$ 其中$x$为预测值，$y$为实际值。这是一个典型的二值交叉熵函数，而BCEWithLogitsLoss则是在其基础之上，对每一个$x$使用$sigmoid$函数激活，具体地： $$ x&amp;rsquo;_i = sigmoid(x) = \frac{1}{1 + \exp(-x_i)} $$ 之后再将$x_i&amp;rsquo;$作为输入的预测值，和$y$一起输入BCELoss函数，即 $$ BCEWithLogitsLoss(x, y) = BCELoss(x&amp;rsquo;, y) $$</description>
+    </item>
+    
+  </channel>
+</rss>
