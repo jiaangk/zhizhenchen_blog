@@ -2,29 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://jiaangk.github.io/</loc>
+    <lastmod>2024-01-10T11:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://jiaangk.github.io/tags/linux/</loc>
+    <lastmod>2024-01-10T11:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://jiaangk.github.io/posts/</loc>
+    <lastmod>2024-01-10T11:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://jiaangk.github.io/tags/proxy/</loc>
+    <lastmod>2024-01-10T11:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://jiaangk.github.io/tags/ssh/</loc>
+    <lastmod>2024-01-10T11:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://jiaangk.github.io/posts/ssh-extra/</loc>
+    <lastmod>2024-01-10T11:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://jiaangk.github.io/tags/</loc>
+    <lastmod>2024-01-10T11:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://jiaangk.github.io/link/</loc>
+    <lastmod>2024-01-10T10:41:00+08:00</lastmod>
+  </url><url>
+    <loc>https://jiaangk.github.io/posts/socks5/</loc>
+    <lastmod>2024-01-10T10:00:00+08:00</lastmod>
+  </url><url>
     <loc>https://jiaangk.github.io/tags/deep-learning/</loc>
     <lastmod>2023-12-27T19:00:00+08:00</lastmod>
   </url><url>
     <loc>https://jiaangk.github.io/tags/entropy/</loc>
     <lastmod>2023-12-27T19:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/</loc>
-    <lastmod>2023-12-27T19:00:00+08:00</lastmod>
-  </url><url>
     <loc>https://jiaangk.github.io/tags/optimization/</loc>
-    <lastmod>2023-12-27T19:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://jiaangk.github.io/posts/</loc>
-    <lastmod>2023-12-27T19:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://jiaangk.github.io/tags/</loc>
     <lastmod>2023-12-27T19:00:00+08:00</lastmod>
   </url><url>
     <loc>https://jiaangk.github.io/posts/binary-entropy/</loc>
     <lastmod>2023-12-27T19:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://jiaangk.github.io/tags/linux/</loc>
-    <lastmod>2023-10-02T13:15:00+08:00</lastmod>
   </url><url>
     <loc>https://jiaangk.github.io/posts/latex-with-docker/</loc>
     <lastmod>2023-10-02T13:15:00+08:00</lastmod>
@@ -42,9 +57,6 @@
     <lastmod>2023-07-21T20:41:00+08:00</lastmod>
   </url><url>
     <loc>https://jiaangk.github.io/tags/cryptography/</loc>
-    <lastmod>2023-07-21T20:41:00+08:00</lastmod>
-  </url><url>
-    <loc>https://jiaangk.github.io/link/</loc>
     <lastmod>2023-07-21T20:41:00+08:00</lastmod>
   </url><url>
     <loc>https://jiaangk.github.io/posts/montgomery-mod/</loc>

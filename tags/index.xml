@@ -6,7 +6,34 @@
     <description>Recent content in Tags on Jiaangk Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Dec 2023 19:00:00 +0800</lastBuildDate><atom:link href="https://jiaangk.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Jan 2024 11:00:00 +0800</lastBuildDate><atom:link href="https://jiaangk.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://jiaangk.github.io/tags/linux/</link>
+      <pubDate>Wed, 10 Jan 2024 11:00:00 +0800</pubDate>
+      
+      <guid>https://jiaangk.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Proxy</title>
+      <link>https://jiaangk.github.io/tags/proxy/</link>
+      <pubDate>Wed, 10 Jan 2024 11:00:00 +0800</pubDate>
+      
+      <guid>https://jiaangk.github.io/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SSH</title>
+      <link>https://jiaangk.github.io/tags/ssh/</link>
+      <pubDate>Wed, 10 Jan 2024 11:00:00 +0800</pubDate>
+      
+      <guid>https://jiaangk.github.io/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Deep Learning</title>
       <link>https://jiaangk.github.io/tags/deep-learning/</link>
@@ -31,15 +58,6 @@
       <pubDate>Wed, 27 Dec 2023 19:00:00 +0800</pubDate>
       
       <guid>https://jiaangk.github.io/tags/optimization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://jiaangk.github.io/tags/linux/</link>
-      <pubDate>Mon, 02 Oct 2023 13:15:00 +0800</pubDate>
-      
-      <guid>https://jiaangk.github.io/tags/linux/</guid>
       <description></description>
     </item>
     

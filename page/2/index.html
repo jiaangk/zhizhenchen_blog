@@ -19,24 +19,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light">
   <meta name="description" content="一个平凡的计算机科学专业学生" />
-  <meta name="author" content="Jiaangk">
+  <meta name="author" content="Zhizhen Chen">
   <meta name="keywords" content="">
-  <title>Jiaangk&#39;s Blog</title>
+  <title>Jiaangk Blog</title>
   <link rel="canonical" href="https://jiaangk.github.io/" />
   
     <link
       href="/index.xml"
       rel="alternate"
       type="application/rss+xml"
-      title="Jiaangk&#39;s Blog"
+      title="Jiaangk Blog"
     />
   
 
   
   <meta property="og:type" content="website" />
   <meta property="og:description" content="一个平凡的计算机科学专业学生" />
-  <meta property="og:title" content="Jiaangk&#39;s Blog" />
-  <meta property="og:site_name" content="Jiaangk&#39;s Blog" />
+  <meta property="og:title" content="Jiaangk Blog" />
+  <meta property="og:site_name" content="Jiaangk Blog" />
   <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:url" content="https://jiaangk.github.io/" />
   <meta property="og:locale" content="en-us" />
@@ -45,11 +45,13 @@
 
   
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Jiaangk&#39;s Blog" />
+  <meta name="twitter:title" content="Jiaangk Blog" />
   <meta name="twitter:description" content="一个平凡的计算机科学专业学生" />
   <meta name="twitter:domain" content="https://jiaangk.github.io/" />
 
   
+  
+    <link rel="icon" href="https://jiaangk.github.io/favicon.ico">
   
   
   
@@ -105,10 +107,14 @@
 
 
 
+
+
+
+
 </button>
       <div class="navbar-brand">
-        <a class="logo navbar-button" href="https://jiaangk.github.io" title="Jiaangk&#39;s Blog">
-          <span>Jiaangk&#39;s Blog</span>
+        <a class="logo navbar-button" href="https://jiaangk.github.io" title="Jiaangk Blog">
+          <span>Jiaangk Blog</span>
         </a>
       </div>
       <nav class="navbar" role="navigation">
@@ -134,6 +140,12 @@
             </li>
           
             <li class="nav-bar-item">
+              <a class="nav-link navbar-button" href="/link/" title="LINK">
+                <span>link</span>
+              </a>
+            </li>
+          
+            <li class="nav-bar-item">
               <a class="nav-link navbar-button" href="/about/" title="about">
                 <span>about</span>
               </a>
@@ -150,6 +162,10 @@
 
 
 <svg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'><path d='M256 32C132.29 32 32 132.29 32 256s100.29 224 224 224 224-100.29 224-224S379.71 32 256 32zM128.72 383.28A180 180 0 01256 76v360a178.82 178.82 0 01-127.28-52.72z'/></svg>
+
+
+
+
 
 
 
@@ -190,61 +206,39 @@
       
       <article class="post">
         <h3 class="title">
-          <a href="https://jiaangk.github.io/posts/placeholder-content/" title="Placeholder Content">Placeholder Content</a>
+          <a href="https://jiaangk.github.io/posts/montgomery-mod/" title="Montgomery模乘">Montgomery模乘</a>
         </h3>
         
           <div class="content summary">
-            <p><p>Lorem est tota propiore conpellat pectoribus de pectora summo.</p></p>
+            <p>由于模运算非常慢，因此在实现RSA等算法时，引入了Montgomery模乘将模运算简化成了减法运算来进行，加快了模运算进行的速度。 问题的提出 加速 $xy \ mod \ N$ ，使得运算中不产生模 $N$ 运算。 $x, y$ 保证 $x, y &lt; N$。 Montgomery约减 定义Montgomery约减 $REDC(T) = TR^{-1} \ mod \ N$ 。其中 $R &gt; N$ 且 $gcd(N, R) = 1$ ， $R^-1$ 为 $R$ 在</p>
             
               <span class="hellip">&hellip;</span>
             
           </div>
-          <a class="readmore" href="https://jiaangk.github.io/posts/placeholder-content/" aria-label="READ MORE">READ MORE</a>
+          <a class="readmore" href="https://jiaangk.github.io/posts/montgomery-mod/" aria-label="READ MORE">READ MORE</a>
         
         <div class="date float-right">
           
-          <time datetime="2019-12-17T00:00:00Z" class="date">December 17, 2019</time>
+          <time datetime="2023-07-21T20:41:00&#43;0800" class="date">July 21, 2023</time>
         </div>
       </article>
       
       <article class="post">
         <h3 class="title">
-          <a href="https://jiaangk.github.io/posts/emoji-support/" title="Emojis Support">Emojis Support</a>
+          <a href="https://jiaangk.github.io/posts/rsa-crt/" title="RSA算法及其实现">RSA算法及其实现</a>
         </h3>
         
           <div class="content summary">
-            <p>Emoji can be enabled in a Hugo project in a number of ways. The emojify function can be called directly in templates or Inline Shortcodes.
-To enable emoji globally, set enableEmoji to true in your site’s configuration and then you can type emoji shorthand codes directly in content files; e.g.
-  🙈 🙈   🙉 🙉   🙊 🙊  The Emoji cheat sheet is a useful reference for emoji shorthand codes.
- N.B. The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform.</p>
+            <p>RSA Generation 取两个大质数 $p$ 和 $q$ ，为了安全性 $p$ 和 $q$ 长度应 大于 $2048$ 位； 设 $n = pq$； 设 $m = \phi(n) = (p-1)(q-1)$； 取 $e$，使得 $2 &lt; e &lt; m$且 $gcd(e, m) = 1$； 取 $d$，使得 $d \times e \equiv 1 \ (mod\ m)$； 此时，公钥为 $(n, e)$，私钥为 $(n, d)$。 Encryption 约定 $x$ 为 plaintext， $y$ 为 cyphertext。 $$ y = x^e \ mod \ n $$ Decryption $$ x =</p>
             
               <span class="hellip">&hellip;</span>
             
           </div>
-          <a class="readmore" href="https://jiaangk.github.io/posts/emoji-support/" aria-label="READ MORE">READ MORE</a>
+          <a class="readmore" href="https://jiaangk.github.io/posts/rsa-crt/" aria-label="READ MORE">READ MORE</a>
         
         <div class="date float-right">
           
-          <time datetime="2019-03-28T12:24:47&#43;0100" class="date">March 28, 2019</time>
-        </div>
-      </article>
-      
-      <article class="post">
-        <h3 class="title">
-          <a href="https://jiaangk.github.io/posts/math-typesetting/" title="Math Typesetting">Math Typesetting</a>
-        </h3>
-        
-          <div class="content summary">
-            <p><p>Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.</p></p>
-            
-              <span class="hellip">&hellip;</span>
-            
-          </div>
-          <a class="readmore" href="https://jiaangk.github.io/posts/math-typesetting/" aria-label="READ MORE">READ MORE</a>
-        
-        <div class="date float-right">
-          
-          <time datetime="2019-03-08T00:00:00Z" class="date">March 08, 2019</time>
+          <time datetime="2023-07-09T11:32:00&#43;0800" class="date">July 09, 2023</time>
         </div>
       </article>
       
@@ -328,42 +322,28 @@ To enable emoji globally, set enableEmoji to true in your site’s configuration
       </li>
     </ul>
     <div class="copyright">
-       &copy; 2023 Jiaangk&#39;s Blog
+       &copy; 2024 Jiaangk Blog
       
     </div>
   </div>
 </footer>
 
 <script>
-    window.FluencyCopyIcon = '\n\n\n\n\n\n\n\u003csvg xmlns=\u0027http:\/\/www.w3.org\/2000\/svg\u0027 class=\u0027ionicon\u0027 viewBox=\u00270 0 512 512\u0027\u003e\u003crect x=\u0027128\u0027 y=\u0027128\u0027 width=\u0027336\u0027 height=\u0027336\u0027 rx=\u002757\u0027 ry=\u002757\u0027 stroke-linejoin=\u0027round\u0027 class=\u0027ionicon-fill-none ionicon-stroke-width\u0027\/\u003e\u003cpath d=\u0027M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24\u0027 stroke-linecap=\u0027round\u0027 stroke-linejoin=\u0027round\u0027 class=\u0027ionicon-fill-none ionicon-stroke-width\u0027\/\u003e\u003c\/svg\u003e\n\n\n\n\n\n\n\n\n\n\n'
+    window.FluencyCopyIcon = '\n\n\n\n\n\n\n\u003csvg xmlns=\u0027http:\/\/www.w3.org\/2000\/svg\u0027 class=\u0027ionicon\u0027 viewBox=\u00270 0 512 512\u0027\u003e\u003crect x=\u0027128\u0027 y=\u0027128\u0027 width=\u0027336\u0027 height=\u0027336\u0027 rx=\u002757\u0027 ry=\u002757\u0027 stroke-linejoin=\u0027round\u0027 class=\u0027ionicon-fill-none ionicon-stroke-width\u0027\/\u003e\u003cpath d=\u0027M383.5 128l.5-24a56.16 56.16 0 00-56-56H112a64.19 64.19 0 00-64 64v216a56.16 56.16 0 0056 56h24\u0027 stroke-linecap=\u0027round\u0027 stroke-linejoin=\u0027round\u0027 class=\u0027ionicon-fill-none ionicon-stroke-width\u0027\/\u003e\u003c\/svg\u003e\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
 </script>
 
 
-<script defer src="https://jiaangk.github.io/js/main.min.12a55795ed4d4aeab9409f9d9f074abe07ea602bea2de749a0aaa426db7f2f6e.js" integrity="sha256-EqVXle1NSuq5QJ+dnwdKvgfqYCvqLedJoKqkJtt/L24=" crossorigin="anonymous" async></script>
+<script defer src="https://jiaangk.github.io/js/main.min.22edf5bac5dfa68a0215a42702e2a71503d57bedadc157af46b990895734f033.js" integrity="sha256-Iu31usXfpooCFaQnAuKnFQPVe+2twVevRrmQiVc08DM=" crossorigin="anonymous" async></script>
 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-  integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
-  crossorigin="anonymous"
-/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 
-<script
-  defer
-  src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-  integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-  crossorigin="anonymous"
-></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
 
 
-<script
-  defer
-  src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-  integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"
-  crossorigin="anonymous"
-  onload="renderMathInElement(document.body);"
-></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         renderMathInElement(document.body, {

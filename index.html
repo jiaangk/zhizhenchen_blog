@@ -206,11 +206,49 @@
       
       <article class="post">
         <h3 class="title">
+          <a href="https://jiaangk.github.io/posts/ssh-extra/" title="SSH跳板机与代理模式">SSH跳板机与代理模式</a>
+        </h3>
+        
+          <div class="content summary">
+            <p>安全外壳协议（Secure Shell Protocol，简称SSH）是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境。SSH通过在网络中建立安全隧道来实现SSH客户端与服务器之间的连接。（摘自维基百科）接触过服务器的人都应该知道，可以使用SSH来远程控制服务器，但这实际上这项功能并不是</p>
+            
+              <span class="hellip">&hellip;</span>
+            
+          </div>
+          <a class="readmore" href="https://jiaangk.github.io/posts/ssh-extra/" aria-label="READ MORE">READ MORE</a>
+        
+        <div class="date float-right">
+          
+          <time datetime="2024-01-10T11:00:00&#43;0800" class="date">January 10, 2024</time>
+        </div>
+      </article>
+      
+      <article class="post">
+        <h3 class="title">
+          <a href="https://jiaangk.github.io/posts/socks5/" title="Linux实体机使用EasyConnect连接内网">Linux实体机使用EasyConnect连接内网</a>
+        </h3>
+        
+          <div class="content summary">
+            <p>前言 EasyConnect是深信服公司开发的用以连接公司/学校专有网络的VPN软件，为了在外地也能正常连接内网进行工作，该软件是必不可少的。然而EasyConnect对于新版的Linux支持不佳，同时存在安全性问题，如果使用一些博主提供的方法（如zhuanlan.zhihu.com/p/643918</p>
+            
+              <span class="hellip">&hellip;</span>
+            
+          </div>
+          <a class="readmore" href="https://jiaangk.github.io/posts/socks5/" aria-label="READ MORE">READ MORE</a>
+        
+        <div class="date float-right">
+          
+          <time datetime="2024-01-10T10:00:00&#43;0800" class="date">January 10, 2024</time>
+        </div>
+      </article>
+      
+      <article class="post">
+        <h3 class="title">
           <a href="https://jiaangk.github.io/posts/binary-entropy/" title="二分类相关的损失函数的关系">二分类相关的损失函数的关系</a>
         </h3>
         
           <div class="content summary">
-            <p>在二分类问题中，常用到torch.nn.BCELoss和torch.nn.BCEWithLogitsLoss两个损失函数。这两个损失函数的定义式为： $$ BCELoss(x, y) = H_y(x) = -\sum_i y_i\ln(x_i) + (1 - y_i)\ln(1 - x_i) $$ 其中$x$为预测值，$y$为实际值。这是一个典型的二值交叉熵函数，而BCEWithLogitsLoss则是在其基础之上，对每一个$x$使用$sigmoid$函数激活，具体地： $$ x&rsquo;_i = sigmoid(x) = \frac{1}{1 + \exp(-x_i)} $$ 之后再将$x_i&rsquo;$作为输入的预测值，和$y$一起输入BCELoss函数，即 $$ BCEWithLogitsLoss(x, y) = BCELoss(x&rsquo;, y) $$</p>
+            <p>在二分类问题中，常用到torch.nn.BCELoss和torch.nn.BCEWithLogitsLoss两个损失函数。这两个损失函数的定义式为： $$ BCELoss(x, y) = H_y(x) = -\sum_i y_i\ln(x_i) + (1 - y_i)\ln(1 - x_i) $$ 其中$x$为预测值，$y$为实际值。这是一个典型的二值交叉熵函数，而BCEWithLogitsLoss则是在其基础之上，对</p>
             
               <span class="hellip">&hellip;</span>
             
@@ -229,14 +267,7 @@
         </h3>
         
           <div class="content summary">
-            <p>老系统烂掉了，现在又需要用$\LaTeX$写东西，Overleaf访问有时又不稳定，于是为了在本地开心愉快的编辑$\LaTeX$决定使用Docker容器的方法在本地安装一个Overleaf。
-Docker安装 简单起见，我们使用Docker官网上提供的脚本方法来安装：
-简单来说，我们只需要先通过
-wget https://get.docker.com -O get-docker.sh 再通过
-sudo sh get-docker.sh 即可安装Docker。在执行完以上命令后，运行apt list | grep docker命令（笔者使用的是Debian系统，因此默认的高级包管理器是apt，如果使用非Debian系系统需要使用其他命令），可以看到
-Docker社区版本的软件包docker-ce以及其他附带软件已经在系统里安装。同时在/etc/apt/sources.list.d/目录内，观察到已经有docker.list文件，说明已经可以用apt包管理器来管理docker的更新。
-Docker镜像 由于众所周知的原因，在国内如果直接访问Docker Hub来安装容器容易遇到速度慢、网络不稳等问题，因此需要添加国内镜像以加速：
-供应商 网址 Docker Proxy https://dockerproxy.</p>
+            <p>老系统烂掉了，现在又需要用$\LaTeX$写东西，Overleaf访问有时又不稳定，于是为了在本地开心愉快的编辑$\LaTeX$决定使用Docker容器的方法在本地安装一个Overleaf。 Docker安装 简单起见，我们使用Docker官网上提供的脚本方法来安装： 简单来说，我们只需要先通过 wget https://get.docker.com -O get-docker.sh 再</p>
             
               <span class="hellip">&hellip;</span>
             
@@ -255,11 +286,7 @@ Docker镜像 由于众所周知的原因，在国内如果直接访问Docker Hub
         </h3>
         
           <div class="content summary">
-            <p>Linux的系统目录构成与作为计算机启蒙所熟知的Windows系统有很大不同，以下面的系统：
-Linux version 6.1.0-11-amd64 (debian-kernel@lists.debian.org) (gcc-12 (Debian 12.2.0-14) 12.2.0, GNU ld (GNU Binutils for Debian) 2.40) #1 SMP PREEMPT_DYNAMIC Debian 6.1.38-4 (2023-08-08)
-为例，针对其中的各个目录的功能制作一个备忘录方便查询。
-boot是存放引导文件的目录，如开机时选择系统所使用的grub等，同时核心映像也存放于此，如上图的系统核心vmlinuz，以及引导程序initrd。
-dev顾名思义即device，众所周知外部设备以文件的形式存在在Linux系统中，该目录下的文件提供了可以直接操控外部设备的接口。从本质上来说，dev目录被udev所管理，借由sysfs虚拟文件系统实现老版本中devfs的功能，提供用户空间控制设备的途径。</p>
+            <p>Linux的系统目录构成与作为计算机启蒙所熟知的Windows系统有很大不同，以下面的系统： Linux version 6.1.0-11-amd64 (debian-kernel@lists.debian.org) (gcc-12 (Debian 12.2.0-14) 12.2.0, GNU ld (GNU Binutils for Debian) 2.40) #1 SMP PREEMPT_DYNAMIC Debian 6.1.38-4 (2023-08-08) 为例，针对其中的各个目录的功能制作一个备忘录方便查询。 boot是存放引导文件的目录，如开机时选择系统所使用的grub等，同时核心映像也存放于此，如上图的系统核心vml</p>
             
               <span class="hellip">&hellip;</span>
             
@@ -272,49 +299,54 @@ dev顾名思义即device，众所周知外部设备以文件的形式存在在Li
         </div>
       </article>
       
-      <article class="post">
-        <h3 class="title">
-          <a href="https://jiaangk.github.io/posts/montgomery-mod/" title="Montgomery模乘">Montgomery模乘</a>
-        </h3>
-        
-          <div class="content summary">
-            <p>由于模运算非常慢，因此在实现RSA等算法时，引入了Montgomery模乘将模运算简化成了减法运算来进行，加快了模运算进行的速度。
-问题的提出 加速 $xy \ mod \ N$ ，使得运算中不产生模 $N$ 运算。 $x, y$ 保证 $x, y &lt; N$。
-Montgomery约减 定义Montgomery约减 $REDC(T) = TR^{-1} \ mod \ N$ 。其中 $R &gt; N$ 且 $gcd(N, R) = 1$ ， $R^-1$ 为 $R$ 在模 $N$ 意义下的逆元，即 $RR^{-1} \equiv 1 (mod \ N)$ 。取 $N&rsquo;$ 使得 $RR^{-1} - NN&rsquo; = 1$ ，由模运算的定义这样的 $N&rsquo;$ 显然存在。算法的输入 $T$ 保证 $T &lt; NR$。</p>
-            
-              <span class="hellip">&hellip;</span>
-            
-          </div>
-          <a class="readmore" href="https://jiaangk.github.io/posts/montgomery-mod/" aria-label="READ MORE">READ MORE</a>
-        
-        <div class="date float-right">
-          
-          <time datetime="2023-07-21T20:41:00&#43;0800" class="date">July 21, 2023</time>
-        </div>
-      </article>
-      
-      <article class="post">
-        <h3 class="title">
-          <a href="https://jiaangk.github.io/posts/rsa-crt/" title="RSA算法及其实现">RSA算法及其实现</a>
-        </h3>
-        
-          <div class="content summary">
-            <p>RSA Generation 取两个大质数 $p$ 和 $q$ ，为了安全性 $p$ 和 $q$ 长度应 大于 $2048$ 位； 设 $n = pq$； 设 $m = \phi(n) = (p-1)(q-1)$； 取 $e$，使得 $2 &lt; e &lt; m$且 $gcd(e, m) = 1$； 取 $d$，使得 $d \times e \equiv 1 \ (mod\ m)$； 此时，公钥为 $(n, e)$，私钥为 $(n, d)$。 Encryption 约定 $x$ 为 plaintext， $y$ 为 cyphertext。</p>
-            
-              <span class="hellip">&hellip;</span>
-            
-          </div>
-          <a class="readmore" href="https://jiaangk.github.io/posts/rsa-crt/" aria-label="READ MORE">READ MORE</a>
-        
-        <div class="date float-right">
-          
-          <time datetime="2023-07-09T11:32:00&#43;0800" class="date">July 09, 2023</time>
-        </div>
-      </article>
-      
     </div>
     
 
+
+<div class="pagination">
+  <ul class="pagination-container">
+    
+
+    
+    
+
+    
+      
+      
+      
+      
+      
+        
+        
+      
+
+      
+        <li class="page-item current page-number"><a class="page-link" href="/">1</a></li>
+      
+    
+      
+      
+      
+      
+      
+        
+        
+      
+
+      
+        <li class="page-item  page-number"><a class="page-link" href="/page/2/">2</a></li>
+      
+    
+
+    
+    <li class="page-item to-right">
+      <a href="/page/2/" class="page-link" aria-label="Next">
+        <span aria-hidden="true">Next &#xbb;</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
 
 
 
@@ -347,7 +379,7 @@ Montgomery约减 定义Montgomery约减 $REDC(T) = TR^{-1} \ mod \ N$ 。其中 
       </li>
     </ul>
     <div class="copyright">
-       &copy; 2023 Jiaangk Blog
+       &copy; 2024 Jiaangk Blog
       
     </div>
   </div>

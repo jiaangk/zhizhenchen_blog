@@ -370,39 +370,39 @@ CC BY-SA 4.0</span>
       </div>
       <article class="post-entry content">
         
-          <p>在二分类问题中，常用到<code>torch.nn.BCELoss</code>和<code>torch.nn.BCEWithLogitsLoss</code>两个损失函数。这两个损失函数的定义式为：
-$$
+          <p>在二分类问题中，常用到<code>torch.nn.BCELoss</code>和<code>torch.nn.BCEWithLogitsLoss</code>两个损失函数。这两个损失函数的定义式为：</p>
+<p>$$
 BCELoss(x, y) = H_y(x) = -\sum_i y_i\ln(x_i) + (1 - y_i)\ln(1 - x_i)
-$$
-其中$x$为预测值，$y$为实际值。这是一个典型的二值交叉熵函数，而<code>BCEWithLogitsLoss</code>则是在其基础之上，对每一个$x$使用$sigmoid$函数激活，具体地：
-$$
+$$</p>
+<p>其中$x$为预测值，$y$为实际值。这是一个典型的二值交叉熵函数，而<code>BCEWithLogitsLoss</code>则是在其基础之上，对每一个$x$使用$sigmoid$函数激活，具体地：</p>
+<p>$$
 x&rsquo;_i = sigmoid(x) = \frac{1}{1 + \exp(-x_i)}
-$$
-之后再将$x_i&rsquo;$作为输入的预测值，和$y$一起输入<code>BCELoss</code>函数，即
-$$
+$$</p>
+<p>之后再将$x_i&rsquo;$作为输入的预测值，和$y$一起输入<code>BCELoss</code>函数，即</p>
+<p>$$
 BCEWithLogitsLoss(x, y) = BCELoss(x&rsquo;, y)
 $$</p>
-<p>在二分类问题，我们得到一组未规范化的预测结果$h_1$和$h_2$，不妨设正样本为$h_1$，则softmax结果为
-$$
+<p>在二分类问题，我们得到一组未规范化的预测结果$h_1$和$h_2$，不妨设正样本为$h_1$，则softmax结果为</p>
+<p>$$
 \begin{align*}
 x_i &amp;= \frac{\exp(h_1)}{\exp(h_1) + \exp(h_2)} \\
 &amp;= \frac{1}{1 + \exp(h_2 - h_1)}
 \end{align*}
-$$
-我们可以用$h = h_1 - h_2$来代替预测结果：
-$$
+$$</p>
+<p>我们可以用$h = h_1 - h_2$来代替预测结果：</p>
+<p>$$
 x_i = \frac{1}{1 + \exp(-h)} = sigmoid(h)
-$$
-$h_1$和$h_2$对应的softmax回归的交叉熵损失函数为：
-$$
+$$</p>
+<p>$h_1$和$h_2$对应的softmax回归的交叉熵损失函数为：</p>
+<p>$$
 \begin{align*}
 loss(h, y) &amp;= -\sum_i y_i\ln(\frac{\exp(h_{i1})}{\exp(h_{i1}) + \exp(h_{i2})}) + (1 - y_i)\ln(\frac{\exp(h_{i2})}{\exp(h_{i1}) + \exp(h_{i2})}) \\
 &amp;= -\sum_i y_i \ln(\frac{1}{1 + \exp(-h_i)}) + (1 - y_i)\ln(1 - \frac{1}{1 + \exp(-h_i)}) \\
 &amp;= -\sum_i y_i\ln(sigmoid(h_i)) + (1 - y_i)\ln(1 - sigmoid(h_i)) \\
 &amp;= BCEWithLogitsLoss(h, y)
 \end{align*}
-$$
-因此将未规范化的预测$h$直接使用<code>BCEWithLogitsLoss</code>损失函数即可得到其对应的softmax函数的损失函数。使用<code>tensor.sigmoid</code>将$h$处理之后输入<code>BCELoss</code>也能得到相同的结果。</p>
+$$</p>
+<p>因此将未规范化的预测$h$直接使用<code>BCEWithLogitsLoss</code>损失函数即可得到其对应的softmax函数的损失函数。使用<code>tensor.sigmoid</code>将$h$处理之后输入<code>BCELoss</code>也能得到相同的结果。</p>
 
 
 
@@ -514,7 +514,7 @@ Tagged with</span>
       </li>
     </ul>
     <div class="copyright">
-       &copy; 2023 Jiaangk Blog
+       &copy; 2024 Jiaangk Blog
       
     </div>
   </div>

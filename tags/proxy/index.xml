@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Proxy on Jiaangk Blog</title>
+    <link>https://jiaangk.github.io/tags/proxy/</link>
+    <description>Recent content in Proxy on Jiaangk Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Jan 2024 11:00:00 +0800</lastBuildDate><atom:link href="https://jiaangk.github.io/tags/proxy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSH跳板机与代理模式</title>
+      <link>https://jiaangk.github.io/posts/ssh-extra/</link>
+      <pubDate>Wed, 10 Jan 2024 11:00:00 +0800</pubDate>
+      
+      <guid>https://jiaangk.github.io/posts/ssh-extra/</guid>
+      <description>安全外壳协议（Secure Shell Protocol，简称SSH）是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境。SSH通过在网络中建立安全隧道来实现SSH客户端与服务器之间的连接。（摘自维基百科）接触过服务器的人都应该知道，可以使用SSH来远程控制服务器，但这实际上这项功能并不是</description>
+    </item>
+    
+    <item>
+      <title>Linux实体机使用EasyConnect连接内网</title>
+      <link>https://jiaangk.github.io/posts/socks5/</link>
+      <pubDate>Wed, 10 Jan 2024 10:00:00 +0800</pubDate>
+      
+      <guid>https://jiaangk.github.io/posts/socks5/</guid>
+      <description>前言 EasyConnect是深信服公司开发的用以连接公司/学校专有网络的VPN软件，为了在外地也能正常连接内网进行工作，该软件是必不可少的。然而EasyConnect对于新版的Linux支持不佳，同时存在安全性问题，如果使用一些博主提供的方法（如zhuanlan.zhihu.com/p/643918</description>
+    </item>
+    
+  </channel>
+</rss>
