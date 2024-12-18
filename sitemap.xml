@@ -2,80 +2,80 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jiaangk.github.io/</loc>
+    <loc>https://blog.zhizhen-chen.top/tags/linux/</loc>
     <lastmod>2024-01-10T11:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/tags/linux/</loc>
+    <loc>https://blog.zhizhen-chen.top/posts/</loc>
     <lastmod>2024-01-10T11:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/posts/</loc>
+    <loc>https://blog.zhizhen-chen.top/tags/proxy/</loc>
     <lastmod>2024-01-10T11:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/tags/proxy/</loc>
+    <loc>https://blog.zhizhen-chen.top/tags/ssh/</loc>
     <lastmod>2024-01-10T11:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/tags/ssh/</loc>
+    <loc>https://blog.zhizhen-chen.top/posts/ssh-extra/</loc>
     <lastmod>2024-01-10T11:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/posts/ssh-extra/</loc>
+    <loc>https://blog.zhizhen-chen.top/tags/</loc>
     <lastmod>2024-01-10T11:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/tags/</loc>
+    <loc>https://blog.zhizhen-chen.top/</loc>
     <lastmod>2024-01-10T11:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/link/</loc>
+    <loc>https://blog.zhizhen-chen.top/link/</loc>
     <lastmod>2024-01-10T10:41:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/posts/socks5/</loc>
+    <loc>https://blog.zhizhen-chen.top/posts/socks5/</loc>
     <lastmod>2024-01-10T10:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/tags/deep-learning/</loc>
+    <loc>https://blog.zhizhen-chen.top/tags/deep-learning/</loc>
     <lastmod>2023-12-27T19:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/tags/entropy/</loc>
+    <loc>https://blog.zhizhen-chen.top/tags/entropy/</loc>
     <lastmod>2023-12-27T19:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/tags/optimization/</loc>
+    <loc>https://blog.zhizhen-chen.top/tags/optimization/</loc>
     <lastmod>2023-12-27T19:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/posts/binary-entropy/</loc>
+    <loc>https://blog.zhizhen-chen.top/posts/binary-entropy/</loc>
     <lastmod>2023-12-27T19:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/posts/latex-with-docker/</loc>
+    <loc>https://blog.zhizhen-chen.top/posts/latex-with-docker/</loc>
     <lastmod>2023-10-02T13:15:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/tags/manual/</loc>
+    <loc>https://blog.zhizhen-chen.top/tags/manual/</loc>
     <lastmod>2023-10-02T13:15:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/posts/linux-filesystem/</loc>
+    <loc>https://blog.zhizhen-chen.top/posts/linux-filesystem/</loc>
     <lastmod>2023-08-23T16:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/tags/system/</loc>
+    <loc>https://blog.zhizhen-chen.top/tags/system/</loc>
     <lastmod>2023-08-23T16:00:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/tags/algorithm/</loc>
+    <loc>https://blog.zhizhen-chen.top/tags/algorithm/</loc>
     <lastmod>2023-07-21T20:41:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/tags/cryptography/</loc>
+    <loc>https://blog.zhizhen-chen.top/tags/cryptography/</loc>
     <lastmod>2023-07-21T20:41:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/posts/montgomery-mod/</loc>
+    <loc>https://blog.zhizhen-chen.top/posts/montgomery-mod/</loc>
     <lastmod>2023-07-21T20:41:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/tags/timing-attack/</loc>
+    <loc>https://blog.zhizhen-chen.top/tags/timing-attack/</loc>
     <lastmod>2023-07-21T20:41:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/tags/number-theory/</loc>
+    <loc>https://blog.zhizhen-chen.top/tags/number-theory/</loc>
     <lastmod>2023-07-09T11:32:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/posts/rsa-crt/</loc>
+    <loc>https://blog.zhizhen-chen.top/posts/rsa-crt/</loc>
     <lastmod>2023-07-09T11:32:00+08:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/about/</loc>
+    <loc>https://blog.zhizhen-chen.top/about/</loc>
     <lastmod>2023-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://jiaangk.github.io/archives/</loc>
+    <loc>https://blog.zhizhen-chen.top/archives/</loc>
   </url><url>
-    <loc>https://jiaangk.github.io/categories/</loc>
+    <loc>https://blog.zhizhen-chen.top/categories/</loc>
   </url>
 </urlset>

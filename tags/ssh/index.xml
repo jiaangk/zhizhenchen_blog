@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>SSH on Jiaangk Blog</title>
-    <link>https://jiaangk.github.io/tags/ssh/</link>
-    <description>Recent content in SSH on Jiaangk Blog</description>
+    <title>SSH on Zhizhen Chen&#39;s Blog</title>
+    <link>https://blog.zhizhen-chen.top/tags/ssh/</link>
+    <description>Recent content in SSH on Zhizhen Chen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Jan 2024 11:00:00 +0800</lastBuildDate><atom:link href="https://jiaangk.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Jan 2024 11:00:00 +0800</lastBuildDate><atom:link href="https://blog.zhizhen-chen.top/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SSH跳板机与代理模式</title>
-      <link>https://jiaangk.github.io/posts/ssh-extra/</link>
+      <link>https://blog.zhizhen-chen.top/posts/ssh-extra/</link>
       <pubDate>Wed, 10 Jan 2024 11:00:00 +0800</pubDate>
       
-      <guid>https://jiaangk.github.io/posts/ssh-extra/</guid>
+      <guid>https://blog.zhizhen-chen.top/posts/ssh-extra/</guid>
       <description>安全外壳协议（Secure Shell Protocol，简称SSH）是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境。SSH通过在网络中建立安全隧道来实现SSH客户端与服务器之间的连接。（摘自维基百科）接触过服务器的人都应该知道，可以使用SSH来远程控制服务器，但这实际上这项功能并不是</description>
     </item>
     

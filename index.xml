@@ -1,90 +1,90 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jiaangk Blog</title>
-    <link>https://jiaangk.github.io/</link>
-    <description>Recent content on Jiaangk Blog</description>
+    <title>Zhizhen Chen&#39;s Blog</title>
+    <link>https://blog.zhizhen-chen.top/</link>
+    <description>Recent content on Zhizhen Chen&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Jan 2024 11:00:00 +0800</lastBuildDate><atom:link href="https://jiaangk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Jan 2024 11:00:00 +0800</lastBuildDate><atom:link href="https://blog.zhizhen-chen.top/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SSH跳板机与代理模式</title>
-      <link>https://jiaangk.github.io/posts/ssh-extra/</link>
+      <link>https://blog.zhizhen-chen.top/posts/ssh-extra/</link>
       <pubDate>Wed, 10 Jan 2024 11:00:00 +0800</pubDate>
       
-      <guid>https://jiaangk.github.io/posts/ssh-extra/</guid>
+      <guid>https://blog.zhizhen-chen.top/posts/ssh-extra/</guid>
       <description>安全外壳协议（Secure Shell Protocol，简称SSH）是一种加密的网络传输协议，可在不安全的网络中为网络服务提供安全的传输环境。SSH通过在网络中建立安全隧道来实现SSH客户端与服务器之间的连接。（摘自维基百科）接触过服务器的人都应该知道，可以使用SSH来远程控制服务器，但这实际上这项功能并不是</description>
     </item>
     
     <item>
       <title>link</title>
-      <link>https://jiaangk.github.io/link/</link>
+      <link>https://blog.zhizhen-chen.top/link/</link>
       <pubDate>Wed, 10 Jan 2024 10:41:00 +0800</pubDate>
       
-      <guid>https://jiaangk.github.io/link/</guid>
+      <guid>https://blog.zhizhen-chen.top/link/</guid>
       <description>Dr. Sun的Blog：sund-xys.cn Sheauhao Jang的Blog：sheauhaw.com Daniel Gu的Blog：www.danielgu.org</description>
     </item>
     
     <item>
       <title>Linux实体机使用EasyConnect连接内网</title>
-      <link>https://jiaangk.github.io/posts/socks5/</link>
+      <link>https://blog.zhizhen-chen.top/posts/socks5/</link>
       <pubDate>Wed, 10 Jan 2024 10:00:00 +0800</pubDate>
       
-      <guid>https://jiaangk.github.io/posts/socks5/</guid>
+      <guid>https://blog.zhizhen-chen.top/posts/socks5/</guid>
       <description>前言 EasyConnect是深信服公司开发的用以连接公司/学校专有网络的VPN软件，为了在外地也能正常连接内网进行工作，该软件是必不可少的。然而EasyConnect对于新版的Linux支持不佳，同时存在安全性问题，如果使用一些博主提供的方法（如zhuanlan.zhihu.com/p/643918</description>
     </item>
     
     <item>
       <title>二分类相关的损失函数的关系</title>
-      <link>https://jiaangk.github.io/posts/binary-entropy/</link>
+      <link>https://blog.zhizhen-chen.top/posts/binary-entropy/</link>
       <pubDate>Wed, 27 Dec 2023 19:00:00 +0800</pubDate>
       
-      <guid>https://jiaangk.github.io/posts/binary-entropy/</guid>
+      <guid>https://blog.zhizhen-chen.top/posts/binary-entropy/</guid>
       <description>在二分类问题中，常用到torch.nn.BCELoss和torch.nn.BCEWithLogitsLoss两个损失函数。这两个损失函数的定义式为： $$ BCELoss(x, y) = H_y(x) = -\sum_i y_i\ln(x_i) + (1 - y_i)\ln(1 - x_i) $$ 其中$x$为预测值，$y$为实际值。这是一个典型的二值交叉熵函数，而BCEWithLogitsLoss则是在其基础之上，对</description>
     </item>
     
     <item>
       <title>Linux上LaTeX开发环境的安装（及Docker）</title>
-      <link>https://jiaangk.github.io/posts/latex-with-docker/</link>
+      <link>https://blog.zhizhen-chen.top/posts/latex-with-docker/</link>
       <pubDate>Mon, 02 Oct 2023 13:15:00 +0800</pubDate>
       
-      <guid>https://jiaangk.github.io/posts/latex-with-docker/</guid>
+      <guid>https://blog.zhizhen-chen.top/posts/latex-with-docker/</guid>
       <description>老系统烂掉了，现在又需要用$\LaTeX$写东西，Overleaf访问有时又不稳定，于是为了在本地开心愉快的编辑$\LaTeX$决定使用Docker容器的方法在本地安装一个Overleaf。 Docker安装 简单起见，我们使用Docker官网上提供的脚本方法来安装： 简单来说，我们只需要先通过 wget https://get.docker.com -O get-docker.sh 再</description>
     </item>
     
     <item>
       <title>Linux系统目录备忘录</title>
-      <link>https://jiaangk.github.io/posts/linux-filesystem/</link>
+      <link>https://blog.zhizhen-chen.top/posts/linux-filesystem/</link>
       <pubDate>Wed, 23 Aug 2023 16:00:00 +0800</pubDate>
       
-      <guid>https://jiaangk.github.io/posts/linux-filesystem/</guid>
+      <guid>https://blog.zhizhen-chen.top/posts/linux-filesystem/</guid>
       <description>Linux的系统目录构成与作为计算机启蒙所熟知的Windows系统有很大不同，以下面的系统： Linux version 6.1.0-11-amd64 (debian-kernel@lists.debian.org) (gcc-12 (Debian 12.2.0-14) 12.2.0, GNU ld (GNU Binutils for Debian) 2.40) #1 SMP PREEMPT_DYNAMIC Debian 6.1.38-4 (2023-08-08) 为例，针对其中的各个目录的功能制作一个备忘录方便查询。 boot是存放引导文件的目录，如开机时选择系统所使用的grub等，同时核心映像也存放于此，如上图的系统核心vml</description>
     </item>
     
     <item>
       <title>Montgomery模乘</title>
-      <link>https://jiaangk.github.io/posts/montgomery-mod/</link>
+      <link>https://blog.zhizhen-chen.top/posts/montgomery-mod/</link>
       <pubDate>Fri, 21 Jul 2023 20:41:00 +0800</pubDate>
       
-      <guid>https://jiaangk.github.io/posts/montgomery-mod/</guid>
+      <guid>https://blog.zhizhen-chen.top/posts/montgomery-mod/</guid>
       <description>由于模运算非常慢，因此在实现RSA等算法时，引入了Montgomery模乘将模运算简化成了减法运算来进行，加快了模运算进行的速度。 问题的提出 加速 $xy \ mod \ N$ ，使得运算中不产生模 $N$ 运算。 $x, y$ 保证 $x, y &amp;lt; N$。 Montgomery约减 定义Montgomery约减 $REDC(T) = TR^{-1} \ mod \ N$ 。其中 $R &amp;gt; N$ 且 $gcd(N, R) = 1$ ， $R^-1$ 为 $R$ 在</description>
     </item>
     
     <item>
       <title>RSA算法及其实现</title>
-      <link>https://jiaangk.github.io/posts/rsa-crt/</link>
+      <link>https://blog.zhizhen-chen.top/posts/rsa-crt/</link>
       <pubDate>Sun, 09 Jul 2023 11:32:00 +0800</pubDate>
       
-      <guid>https://jiaangk.github.io/posts/rsa-crt/</guid>
+      <guid>https://blog.zhizhen-chen.top/posts/rsa-crt/</guid>
       <description>RSA Generation 取两个大质数 $p$ 和 $q$ ，为了安全性 $p$ 和 $q$ 长度应 大于 $2048$ 位； 设 $n = pq$； 设 $m = \phi(n) = (p-1)(q-1)$； 取 $e$，使得 $2 &amp;lt; e &amp;lt; m$且 $gcd(e, m) = 1$； 取 $d$，使得 $d \times e \equiv 1 \ (mod\ m)$； 此时，公钥为 $(n, e)$，私钥为 $(n, d)$。 Encryption 约定 $x$ 为 plaintext， $y$ 为 cyphertext。 $$ y = x^e \ mod \ n $$ Decryption $$ x =</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>https://jiaangk.github.io/about/</link>
+      <link>https://blog.zhizhen-chen.top/about/</link>
       <pubDate>Sun, 09 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://jiaangk.github.io/about/</guid>
+      <guid>https://blog.zhizhen-chen.top/about/</guid>
       <description>Zhizhen Chen&amp;rsquo;s personal website.
 TODO.</description>
     </item>
